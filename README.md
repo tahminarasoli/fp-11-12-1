@@ -5,6 +5,10 @@ A model of how you can set up your project for development, testing & deployment
 ### Contents
 
 * [General](#general)
+  * [Title and Description](#helpy)
+  * [Logo](#logo)
+  * [Documentation](#documentation)
+  * [Screenshot](#app-screenshot)
   * [Configuration](#configuration)
 * [Development](#development)
   * [Getting started](#getting-started)
@@ -21,6 +25,23 @@ A model of how you can set up your project for development, testing & deployment
 * [Helpful Links](#helpful-links)
 
 ## General
+
+### HELPY
+
+this is the final project from HYF class 11-12 group-1 students. in this project, we tried to find a social problem and propose a solution for it.
+The issue that is addressed in this project is to help people who need help doing their shopping. 
+This app is a connection point between those people who need help and people who are willing to help others.
+
+
+### [Logo](https://github.com/final-project-org/HELPY/blob/master/logo.jpg)
+
+### [Documentation](https://github.com/final-project-org/HELPY/wiki)
+
+
+
+
+### [App-Screenshot]()
+
 
 ### Configuration
 
