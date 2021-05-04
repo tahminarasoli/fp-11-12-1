@@ -28,9 +28,9 @@ A model of how you can set up your project for development, testing & deployment
 
 ### HELPY
 
-this is the final project from HYF class 11-12 group-1 students. in this project, we tried to find a social problem and propose a solution for it.
-The issue that is addressed in this project is to help people who need help doing their shopping. 
-This app is a connection point between those people who need help and people who are willing to help others.
+This is the final project from HYF class 11-12 group-1 students. In this project, we tried to give a bit back to society and participate in solving or at least lower an existing social problem and propose a solution for it.
+The issue that is addressed in this project is the challenge that vulnerable people such as old people, people with limited movement, sick people, etc... are facing to do their groceries and bring them to their address without extra costs.  
+The goal of this app is to link those people who need help with their groceries to volunteers who are willing to help.
 
 
 ### [Logo](https://github.com/final-project-org/HELPY/blob/master/logo.jpg)
