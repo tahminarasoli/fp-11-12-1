@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "http://localhost:5000" });
-// const API = axios.create({ baseURL: "https://helpy-hyf.herokuapp.com" });
+// const API = axios.create({ baseURL: "http://localhost:5000" });
+const API = axios.create({ baseURL: "https://helpy-hyf.herokuapp.com" });
 
 // API.interceptors.request.use((req) => {
 //   if (localStorage.getItem("profile")) {
@@ -12,4 +12,4 @@ const API = axios.create({ baseURL: "http://localhost:5000" });
 // });
 
 
-export const showHomePage = () => API.get("/");
+export const showHomePage = () => API.get("/home");
