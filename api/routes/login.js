@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/home', function (req, res) {
-  res.send('Welcome!');
+  res.send('HELLO WORLD FROM GROUP 1!');
 });
 
 app.get('/secret', withAuth, function (req, res) {
