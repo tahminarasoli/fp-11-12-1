@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div>
             <h1>Selamlar from Home</h1>
-            <h1> {dataFromDatabase} </h1>
+            <h1> {JSON.stringify(dataFromDatabase, null, 4)} </h1>
         </div>
     )
 }

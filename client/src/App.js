@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { show } from "./actions/show";
 
 const App = () => {
-  
+  console.log("inside app")
   const dispatch = useDispatch();
 
   useEffect(() => {
