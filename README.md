@@ -33,14 +33,16 @@ The issue that is addressed in this project is the challenge that vulnerable peo
 The goal of this app is to link those people who need help with their groceries to volunteers who are willing to help.
 
 
-### [Logo](https://github.com/final-project-org/HELPY/blob/master/logo.jpg)
+### Logo
+<img src="https://github.com/final-project-org/HELPY/blob/master/logo.jpg" width="200px"/>
 
 ### [Documentation](https://github.com/final-project-org/HELPY/wiki)
 
 
 
 
-### [App-Screenshot]()
+### Screenshot
+![App-Screenshot](https://github.com/final-project-org/HELPY/blob/master/Illistrator.png)
 
 
 ### Configuration
