@@ -1,4 +1,4 @@
-const messageFromServer = "Hello From Server"
+const messageFromServer = "Hello From Server for heroku"
 
 const homeController = {
   showHomePage: (req, res) => {
