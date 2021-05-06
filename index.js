@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const dotenv = require("dotenv");
 
-const homeRoutes = require("./routes/home.js");
+const router = require('./routes/router');
 const connectDB = require("./models/connectDB");
 
 const app = express();
@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 app.use(cors());
 
-app.use("/home", homeRoutes);
+app.use("/api", router);
 
 const PORT = process.env.PORT || 5000;
 
