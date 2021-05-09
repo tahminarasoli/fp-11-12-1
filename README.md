@@ -34,11 +34,11 @@ The goal of this app is to link those people who need help with their groceries 
 
 
 ### Logo
-<img src="imageForRepo/logo.jpg" width="200px"/>
+<img src="client/src/imageForRepo/logo.jpg" width="200px"/>
 
 ---
 ### Screenshot
-![App-Screenshot](imageForRepo/Illistrator.png)
+![App-Screenshot](client/src/imageForRepo/Illistrator.png)
 
 ***
 ### [Documentation](https://github.com/final-project-org/HELPY/wiki)
