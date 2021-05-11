@@ -34,7 +34,7 @@ The goal of this app is to link those people who need help with their groceries 
 
 
 ### Logo
-<img src="client/src/images/logo.jpg" width="200px"/>
+<img src="client/src/images/logo.png" width="200px"/>
 
 ---
 ### Screenshot
