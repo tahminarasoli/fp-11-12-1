@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { show } from "./actions/show";
 import Auth from './components/Auth/Auth';
 import Navbar from './components/Navbar/Navbar';
-import { Container } from '@material-ui/core';
+
 
 const App = () => {
   console.log("inside app")
