@@ -40,7 +40,7 @@ const Auth = () => {
 
     const switchMode = () => {
         setIsRegister((prevIsRegister) => !prevIsRegister);
-        showPasswordHandler(false)
+        setShowPassword(false)
       };
 
    return (
