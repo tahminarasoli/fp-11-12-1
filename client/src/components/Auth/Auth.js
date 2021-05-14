@@ -70,16 +70,14 @@ const Auth = () => {
                </>
                )}
                </Grid>
-               <Button type="submit" fullWidth variant="contained"  className={classes.submit}>
+               <Button  type="submit" fullWidth variant="contained"  className={classes.submit}>
                    {isRegister ? 'Sign Up' : 'Log In'}
                </Button>
                <Grid container justify="center">
-                    <Grid item >
-                        <Button  className={classes.switch} variant='contained' onClick={switchMode}>
+                    <Button  className={classes.switch} variant='contained' onClick={switchMode}>
                             { isRegister ? 'Already have an account? Log In' : "Don't have an account? Sign Up"}
                         </Button>
                     </Grid>
-               </Grid>
                </form>
            </Paper>
            </Container>

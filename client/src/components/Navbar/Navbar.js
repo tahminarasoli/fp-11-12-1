@@ -16,7 +16,7 @@ const user = null;
             <AppBar className={classes.appBar} position="static" >
               <div className={classes.brandContainer}>
             <img className={classes.image} src={logo} alt="logo" />
-            <Typography component={Link} to ="/" className={classes.heading} variant="h2" align="center" >We help with shoping </Typography>
+            <Typography component={Link} to ="/" className={classes.heading} variant="h2" >We help with shoping </Typography>
             </div>
             <Toolbar className={classes.toolbar}>
               {user ? (
