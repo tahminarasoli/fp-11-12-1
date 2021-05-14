@@ -1,5 +1,6 @@
-import React, {  useEffect } from 'react'
-import Home from "./components/Home/Home"
+import React, {  useEffect } from 'react';
+import Home from "./components/Home/Home";
+import Help from "./components/Help/Help";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import { useDispatch } from "react-redux";
@@ -22,6 +23,7 @@ const App = () => {
     <Switch>
       <Route path="/" exact component={Home} />
       <Route path="/auth" exact component={Auth} />
+      <Route path="/help" exact component={Help} />
     </Switch>
   </BrowserRouter>
        

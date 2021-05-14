@@ -5,7 +5,7 @@ export const login = (formData, history) => async (dispatch) => {
 try {
  // log in the user 
    
- history.push('/');
+ history.push('/help');
 } catch (error) {
 console.log(error);
 };
@@ -15,7 +15,7 @@ export const register = (formData, history) => async (dispatch) => {
     try {
      // register the user 
        
-     history.push('/');
+     history.push('/help');
     } catch (error) {
     console.log(error);
     };
