@@ -13,13 +13,15 @@ const AuthController = require('../controllers/AuthController')
 
 router.post("/register", AuthController.register)
 
+
 /**
  * @route POST /api/auth/login
  * @desc Login endpoint
  * @access Public
 */
 
-// router.post("/login", AuthController.authLogin)
+router.post("/login", AuthController.authLogin)
+//router.post("/help", AuthController.authHelp)
 
 
 module.exports = router;

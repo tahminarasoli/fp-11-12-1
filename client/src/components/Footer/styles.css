@@ -1,0 +1,20 @@
+.footer .social img {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}
+.footer .social{
+    text-align: center;
+}
+   
+
+.footer{
+  
+    background-image: linear-gradient(to right, #7ECDF9, #2275C1);
+    width: 100%;
+    position: absolute;
+    margin-top: 30px;
+    padding: 10px 0px 10px 0px;
+}
+
+
