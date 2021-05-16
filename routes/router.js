@@ -13,10 +13,10 @@ const AuthRouter = require('./AuthRouter');
 */
 router.use("/home", HomeRouter);
 /**
- * @route /api/auth
- * @desc route for auth
+ * @route /api/user
+ * @desc route for user
 */
-router.use("/auth", AuthRouter);
+router.use("/user", AuthRouter);
 
 
 module.exports = router;

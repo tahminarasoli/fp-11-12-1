@@ -3,15 +3,15 @@ const router = express.Router();
 
 const AuthController = require('../controllers/AuthController')
 
-// Only for /api/auth
+// Only for /api/user
 
 /** 
- * @route POST /api/auth/register
+ * @route POST /api/user/register
  * @desc Register endpoint
  * @access Public
 */
 
-router.post("/register", AuthController.authRegister)
+router.post("/register", AuthController.register)
 
 /**
  * @route POST /api/auth/login
