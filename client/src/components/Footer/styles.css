@@ -1,10 +1,13 @@
 .footer .social img {
-    width: 30px;
-    height: 30px;
+    width: 18px;
+    height: 18px;
     margin-left: 20px;
 }
 .footer .social{
     text-align: center;
+}
+.footer .social p span {
+    margin-left: 20px;
 }
    
 p { 
@@ -22,7 +25,7 @@ p {
   
     position: absolute;
     margin-top: 10px;
-    padding: 10px 0px 10px 0px;
+    
 }
 
 
