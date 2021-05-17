@@ -19,7 +19,7 @@ export default makeStyles((theme) => ({
       borderRadius: 30,
        display: 'flex',
         padding: '30px 50px',
-        alignItems: 'center'
+      
       },
       
             paragraph: { 

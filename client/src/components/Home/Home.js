@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import Showcase from '../Showcase/Showcase'
 import Footer from '../Footer/Footer'
 
-import useStyles from './styles';
 
 const Home = () => {
   
