@@ -7,13 +7,21 @@
     text-align: center;
 }
    
-
+p { 
+    color:  rgba(0, 0, 0, 0.54);
+    font-size: 1.25rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+}
 .footer{
   
     background-image: linear-gradient(to right, #7ECDF9, #2275C1);
     width: 100%;
+  
     position: absolute;
-    margin-top: 30px;
+    margin-top: 10px;
     padding: 10px 0px 10px 0px;
 }
 

@@ -17,21 +17,28 @@ export default makeStyles((theme) => ({
     },
   },
 
-  
+  input: {
+    background:'linear-gradient(135deg, #BBD2DF 0%, #CFE8F7 100%)',
+boxShadow: '2px 2px 4px rgba(134, 140, 143, 0.2), -2px -2px 4px rgba(134, 140, 143, 0.2), 2px -2px 4px rgba(255, 255, 255, 0.9), -2px 2px 5px rgba(134, 140, 143, 0.9), inset -1px 1px 2px rgba(255, 255, 255, 0.3), inset 1px -1px 2px rgba(134, 140, 143, 0.5)',
+
+
+  },
   form: {
     width: '100%', 
     marginTop: theme.spacing(1),
   },
   submit: {
+    
     margin: theme.spacing(3, 0, 2), 
-     background: 'linear-gradient( 35deg, rgba(37, 120, 180, 0.5), rgba(73, 138, 252, 1))' ,
-     borderRadius: 30,
-    boxShadow: '10px 10px 20px rgba(149, 149, 149, 0.2), -10px -10px 20px rgba(149, 149, 149, 0.2), 10px -10px 20px rgba(255, 255, 255, 0.9), -10px 10px 25px rgba(149, 149, 149, 0.9), inset -1px 1px 2px rgba(255, 255, 255, 0.3), inset 1px -1px 2px rgba(149, 149, 149, 0.5)',
+    background: 'linear-gradient(90deg, #70D3FC 0%, #346AD1 100%)',
+    boxShadow: 'box-shadow: 10px 10px 20px rgba(38, 80, 127, 0.2), -10px -10px 20px rgba(38, 80, 127, 0.2), 10px -10px 20px rgba(90, 188, 255, 0.9), -10px 10px 25px rgba(38, 80, 127, 0.9), inset -1px 1px 2px rgba(90, 188, 255, 0.3), inset 1px -1px 2px rgba(38, 80, 127, 0.5)',
+    borderRadius: 30,
  },
  switch: {
+  
     margin: theme.spacing(3, 0, 2), 
-    background: 'linear-gradient( 35deg, rgba(37, 120, 180, 0.5), rgba(73, 138, 252, 1))' ,
+    background: 'linear-gradient(90deg, #70D3FC 0%, #346AD1 100%)',
+    boxShadow: 'box-shadow: 10px 10px 20px rgba(38, 80, 127, 0.2), -10px -10px 20px rgba(38, 80, 127, 0.2), 10px -10px 20px rgba(90, 188, 255, 0.9), -10px 10px 25px rgba(38, 80, 127, 0.9), inset -1px 1px 2px rgba(90, 188, 255, 0.3), inset 1px -1px 2px rgba(38, 80, 127, 0.5)',
     borderRadius: 30,
-   boxShadow: '10px 10px 20px rgba(149, 149, 149, 0.2), -10px -10px 20px rgba(149, 149, 149, 0.2), 10px -10px 20px rgba(255, 255, 255, 0.9), -10px 10px 25px rgba(149, 149, 149, 0.9), inset -1px 1px 2px rgba(255, 255, 255, 0.3), inset 1px -1px 2px rgba(149, 149, 149, 0.5)',
- },
+ }
 }));

@@ -1,3 +1,4 @@
+import { Container, Typography } from '@material-ui/core';
 import React from 'react';
 import image1 from '../../images/Facebook_Logo.png';
 import image2 from '../../images/insta.png'
@@ -22,4 +23,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default Footer;
