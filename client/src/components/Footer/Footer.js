@@ -8,18 +8,20 @@ import './styles.css'
 const Footer = () => {
     return (
        <div className='bigfoot'>
-       <footer className="footer">
+        <footer className="footer">
           <div className="social">
-               <p>Become part of our story</p>
+               <p>
+                  Become part of our story
       
-                 <a href="https://www.facebook.com/HackYFutureBE/" target="_blank"><img src= { image1} alt ="pic1"/></a>
-                 <a href="https://www.linkedin.com/company/hackyourfuture-belgium/" target="_blank"><img src={image3 } alt ="pic3"/></a>
-                 <a href="https://www.instagram.com/" target="_blank"><img src={image2} alt ="pic2"/></a>
+                  <a href="https://www.facebook.com/HackYFutureBE/" target="_blank"><img src= { image1} alt ="pic1"/></a>
+                  <a href="https://www.linkedin.com/company/hackyourfuture-belgium/" target="_blank"><img src={image3 } alt ="pic3"/></a>
+                  <a href="https://www.instagram.com/" target="_blank"><img src={image2} alt ="pic2"/></a>
       
-                 <p>&copy; 2021 HELPY</p>
-       </div> 
+                  <span>&copy; 2021 HELPY</span>
+               </p>
+         </div> 
        </footer>
-       </div>
+      </div>
     )
 }
 
