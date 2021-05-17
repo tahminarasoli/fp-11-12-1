@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../images/logo.png';
 import useStyles from './styles';
 
+
 const Navbar = () => {
   const classes = useStyles();
  
@@ -15,8 +16,8 @@ const user = null;
        
             <AppBar className={classes.appBar} position="static" >
               <div className={classes.brandContainer}>
-            <img className={classes.image} src={logo} alt="logo" />
-            <Typography component={Link} to ="/" className={classes.heading} variant="h2" >We help with shoping </Typography>
+            <img  className={classes.image} src={logo} alt="logo" />
+            <Typography component={Link} to ="/" className={classes.heading} variant="h2" >We help with shopping </Typography>
             </div>
             <Toolbar className={classes.toolbar}>
               {user ? (
@@ -26,7 +27,7 @@ const user = null;
               <Button variant="contained" className={classes.logout} color="secondary">Log out</Button>
                   </div>
             ) : (
-            <Button component={Link} to="/auth" className={classes.button} fullWidth variant="contained" >Log in</Button>
+            <Button  component={Link} to="/auth" className={classes.button} fullWidth variant="contained" color='primary' >Log in</Button>
               )}
            </Toolbar>
             </AppBar>

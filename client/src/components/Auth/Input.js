@@ -1,12 +1,17 @@
 import React from 'react';
 import { TextField, Grid, InputAdornment, IconButton } from  '@material-ui/core';
 
+import useStyles from './styles';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
- const Input = ({ name, changeHandler,label, half, autoFocus, type, showPasswordHandler }) => (
+
+ const Input = ( { name, changeHandler,label, half, autoFocus, type, showPasswordHandler,  }) => {
+    const classes = useStyles();
+    return (
   <Grid item xs={12} sm={half ? 6 : 12}>
             <TextField
+            className={classes.input}
             name={name}
             onChange={changeHandler}
             variant="outlined"
@@ -27,6 +32,6 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
             />
             </Grid>
             );
-
+            };
 
 export default Input;
