@@ -1,4 +1,8 @@
-export const SHOW = "SHOW";
+const ACTIONS = {
+    LOGIN: 'LOGIN',
+    GET_TOKEN: 'GET_TOKEN',
+    GET_USER: 'GET_USER',
+    GET_ALL_USERS: 'GET_ALL_USERS'
+}
 
-export const AUTH = 'AUTH' ;
-export const LOGOUT = 'LOGOUT';
+export default ACTIONS
