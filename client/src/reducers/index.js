@@ -1,8 +1,10 @@
-import { combineReducers } from "redux";
-
-import { showHome } from "./home";
-import auth from './auth';
+import { combineReducers } from 'redux';  
+import auth from './authReducer';
+import token from './tokenReducer';
+import users from './usersReducer';
 
 export default combineReducers({
-  showHome, auth
-});
+    auth,
+    token,
+    users
+})

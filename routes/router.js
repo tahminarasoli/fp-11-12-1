@@ -1,22 +1,23 @@
 const express = require('express');
-
 const router = express.Router();
 
-const HomeRouter = require('./home');
-const AuthRouter = require('./AuthRouter');
+const userRouter = require('./userRouter');
+const uploadRouter = require('./uploadRouter');
+
 
 // Only "/api" endpoint
 
 /**
- * @route /api/home
- * @desc route for home
+ * @route /api/user
+ * @desc route for user
 */
-router.use("/home", HomeRouter);
+router.use("/user", userRouter);
+
 /**
- * @route /api/auth
- * @desc route for auth
+ * @route /api/upload_avatar
+ * @desc route for user
 */
-router.use("/auth", AuthRouter);
+router.use("/upload_avatar", uploadRouter);
 
 
 module.exports = router;

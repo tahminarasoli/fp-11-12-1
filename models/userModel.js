@@ -1,48 +1,49 @@
 const mongoose = require("mongoose");
 
-const userScheme = mongoose.Schema({
+const userScheme = new mongoose.Schema({
   name: {
-    type: Object,
-    first: {
-      type: String,
-      required: true,
-    },
-    last: {
-      type: String,
-      required: true,
-    },
+    type: String,
+    required: [true, "Please enter your name!"],
   },
   email: {
     type: String,
-    required: true,
+    required: [true, "Please enter your email!"],
     unique: true,
   },
   password: {
     type: String,
-    required: true,
+    required: [true, "Please enter your password!"],
   },
   phone: {
     type: String,
   },
-  image: {
+  role: {
+    type: Number,
+    default: 0, // 0 = user, 1 = admin
+  },
+  avatar: {
     type: String,
+    default:
+      "https://res.cloudinary.com/di5ucmqey/image/upload/v1620533298/avatar_vyzyeq.png",
   },
   address: {
     type: Object,
-    address: {
-      type: String,
-    },
     city: {
       type: String,
     },
-    postcode: {
+    streetName: {
+      type: String,
+    },
+    box: {
+      type: String,
+    },
+    zipCode: {
       type: String,
     },
   },
-  createdAt: {
-    type: Date,
-    default: new Date(),
-  },
+},
+{
+  timestamps: true,
 });
 
-module.exports = UserModel = mongoose.model("User", userScheme);
+module.exports = UserModel = mongoose.model("Users", userScheme);
