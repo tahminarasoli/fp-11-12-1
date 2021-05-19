@@ -211,6 +211,8 @@ const Auth = () => {
     const failureGoogle = (response) => {
         console.log(response);
     };
+    console.log(process.env.REACT_APP_GOOGLE_ID)
+    console.log(process.env.REACT_APP_FACEBOOK_ID)
 
     return (
         <Container component="main" maxWidth="xs">
