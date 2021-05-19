@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./profile.css";
+import Input from "./Input";
+import { Button, Paper, Grid, Typography, Container } from "@material-ui/core";
+import useStyles from "./styles";
+import logo1 from "../../images/logo1.png";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchAllUsers, dispatchGetAllUsers } from "../../actions/usersAction";
@@ -26,6 +30,7 @@ const initialState = {
 };
 
 const Profile = () => {
+    const classes = useStyles();
     const auth = useSelector((state) => state.auth);
     const token = useSelector((state) => state.token);
     const users = useSelector((state) => state.users);
@@ -210,14 +215,24 @@ const Profile = () => {
     return (
         <>
             <div>
-                {err && showErrMsg(err)}
+            {err && showErrMsg(err)}
                 {success && showSuccessMsg(success)}
-                {loading && <h3>Loading......</h3>}
+               {loading && <h3>Loading......</h3>}
             </div>
             <div className="profile_page">
                 <div className="col-left">
-                    <h2>{isAdmin ? "Admin Profile" : "User Profile"}</h2>
-                    <div className="avatar">
+                <Container component="main" maxWidth="xs">
+            <Paper className={classes.paper} elevation={2}>
+                <img
+                    src={logo1}
+                    alt="logo1"
+                    height="50"
+                />
+                    <Typography variant="h5">
+                        {isAdmin ? "Admin Profile" : "User Profile"}
+                        </Typography>
+                        <form className={classes.form}>
+                        <div className="avatar">
                         <img src={avatar ? avatar : user.avatar} alt="" />
                         <span>
                             <i className="fas fa-camera"></i>
@@ -230,122 +245,114 @@ const Profile = () => {
                             />
                         </span>
                     </div>
-
-                    <div className="form-group">
-                        <label htmlFor="name">Name</label>
-                        <input
+               
+                <Grid container spacing={2}>
+                        <Input
+                            label="Name"
                             type="text"
-                            placeholder="Enter your name"
+                            handleChangeInput={handleChangeInput}
                             id="name"
                             defaultValue={user?.name}
                             name="name"
-                            onChange={handleChangeInput}
-                        />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="email">Email Address</label>
-                        <input
+                            half
+                          />
+                        <Input
+                            label="Email Address"
                             type="text"
-                            placeholder="Enter email address"
-                            id="email"
+                             id="email"
                             defaultValue={user?.email}
                             name="email"
                             disabled
+                            half
                         />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="password">New Password</label>
-                        <input
+                    <Input
+                            label="New Password"
                             type="password"
-                            placeholder="Enter password"
+                          
                             id="password"
                             defaultValue={password}
                             name="password"
-                            onChange={handleChangeInput}
+                            handleChangeInput={handleChangeInput}
+                            half
                         />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="cf_password">
-                            Confirm New Password
-                        </label>
-                        <input
+                
+                    <Input
                             type="password"
-                            placeholder="Confirm password"
+                            label="Confirm Password"
                             id="cf_password"
                             defaultValue={cf_password}
                             name="cf_password"
                             onChange={handleChangeInput}
+                           half
                         />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="phone">Phone Number</label>
-                        <input
+
+                    <Input 
+                            label="Phone Number"
                             type="text"
-                            placeholder="Phone Number"
+                            handleChangeInput={handleChangeInput}
                             id="phone"
                             defaultValue={user?.phone}
                             name="phone"
-                            onChange={handleChangeInput}
+                        
                         />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="city">City</label>
-                        <input
+                 
+                    <Input
                             type="text"
-                            placeholder="City"
+                            label="City"
                             id="city"
                             defaultValue={user?.address?.city}
                             name="city"
-                            onChange={handleChangeInput}
+                            handleChangeInput={handleChangeInput}
+                            half
                         />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="streetName">Street Name</label>
-                        <input
+                    <Input
+                           label="Street Name"
                             type="text"
-                            placeholder="Street Name"
+                            half
                             id="streetName"
                             defaultValue={user?.address?.streetName}
                             name="streetName"
-                            onChange={handleChangeInput}
+                            handleChangeInput={handleChangeInput}
                         />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="box">Box Number</label>
-                        <input
+                 
+                    <Input 
                             type="text"
-                            placeholder="Box Number"
+                            label="Box Number"
                             id="box"
                             defaultValue={user?.address?.box}
                             name="box"
-                            onChange={handleChangeInput}
+                            handleChangeInput={handleChangeInput}
+                            half
                         />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="zipCode">Zip Code</label>
-                        <input
+                 
+                    <Input
+                            label="Zip Code"
                             type="text"
-                            placeholder="Zip Code"
+                            half
                             id="zipCode"
                             defaultValue={user?.address?.zipCode}
                             name="zipCode"
-                            onChange={handleChangeInput}
+                            handleChangeInput={handleChangeInput}
                         />
-                    </div>
-
-                    <div>
-                        <em style={{ color: "crimson" }}>
+                      <em style={{ color: "crimson" }}>
                             * If you update your password here, you will not be
-                            able to login quickly using google and facebook.
+                            able to login using google and facebook.
                         </em>
-                    </div>
-
-                    <button disabled={loading} onClick={handleUpdate}>
+                   
+                     </Grid>
+                    <Button 
+                     type="submit"
+                     fullWidth
+                     variant="contained"
+                     color="primary"
+                     className={classes.submit}
+                    disabled={loading} 
+                    onClick={handleUpdate}>
                         Update
-                    </button>
+                    </Button>
+                    </form>
+                    </Paper>
+                    </Container>
                 </div>
 
                 {isAdmin ? (

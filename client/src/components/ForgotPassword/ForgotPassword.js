@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './forgotPassword.css'
+import useStyles from "./styles";
+import logo1 from "../../images/logo1.png";
 
 import {
     showErrMsg,
@@ -8,6 +10,7 @@ import {
 } from "../../utils/notification/Notification";
 
 import { isEmail } from "../../utils/validation/Validation";
+import { Button, Container, Input, Paper, TextField, Typography } from "@material-ui/core";
 
 const initialState = {
     email: "",
@@ -16,6 +19,7 @@ const initialState = {
 };
 
 const ForgotPassword = () => {
+    const classes = useStyles();
     const [data, setData] = useState(initialState);
 
     const { email, err, success } = data;
@@ -38,26 +42,45 @@ const ForgotPassword = () => {
     };
 
     return (
-        <div className="fg_pass">
-            <h2>Forgot Your Password?</h2>
-            <div className="row">
-                {err && showErrMsg(err)}
+        <Container component="main" maxWidth="xs">
+               <Paper className={classes.paper} elevation={2}>
+                <img
+                    className={classes.avatar}
+                    src={logo1}
+                    alt="logo1"
+                    height="50"
+                />
+            <Typography variant="h5">Forgot Your Password?</Typography>
+            <form className={classes.form}>
+            {err && showErrMsg(err)}
                 {success && showSuccessMsg(success)}
-
-                <label htmlFor="email">Email Address</label>
-                <input
+              <TextField
+               className={classes.input}
+                    fullWidth
+                    required
+                    variant="outlined"
+                    label="Enter your email address"
+                    htmlFor="email"
                     type="text"
-                    placeholder="Enter your email address"
+                    placeholder="Email address"
                     id="email"
                     defaultValue={email}
                     name="email"
                     onChange={handleChangeInput}
-                />
-                <button onClick={handleForgotPassword}>
+                    />
+                    
+                <Button 
+                 className={classes.submit}
+                 onClick={handleForgotPassword}
+                 fullWidth
+                 color='primary'
+                 variant='contained'
+                >
                     Verify your email
-                </button>
-            </div>
-        </div>
+                </Button>
+                </form>
+            </Paper>
+        </Container>
     );
 };
 

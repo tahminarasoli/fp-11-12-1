@@ -143,7 +143,7 @@ const Auth = () => {
                 localStorage.setItem("firstLogin", true);
 
                 dispatch(dispatchLogin());
-                history.push("/");
+                history.push("/help");
             } catch (err) {
                 err.response?.data.msg &&
                     setFormData({
@@ -174,7 +174,7 @@ const Auth = () => {
             localStorage.setItem("firstLogin", true);
 
             dispatch(dispatchLogin());
-            history.push("/");
+            history.push("/help");
         } catch (err) {
             err.response.data.msg &&
                 setFormData({
@@ -197,7 +197,7 @@ const Auth = () => {
             localStorage.setItem("firstLogin", true);
 
             dispatch(dispatchLogin());
-            history.push("/");
+            history.push("/help");
         } catch (err) {
             err.response.data.msg &&
                 setFormData({
@@ -214,11 +214,8 @@ const Auth = () => {
 
     return (
         <Container component="main" maxWidth="xs">
-            {err && showErrMsg(err)}
-            {success && showSuccessMsg(success)}
             <Paper className={classes.paper} elevation={2}>
                 <img
-                    className={classes.avatar}
                     src={logo1}
                     alt="logo1"
                     height="50"
@@ -226,7 +223,9 @@ const Auth = () => {
                 <Typography variant="h5">
                     {isRegister ? "Sign Up" : "Log In"}
                 </Typography>
-                <form className={classes.form} onSubmit={handleSubmit}>
+       <form className={classes.form} onSubmit={handleSubmit}>
+       {err && showErrMsg(err)}
+            {success && showSuccessMsg(success)}
                     <Grid container spacing={2}>
                         {isRegister && (
                             <>
@@ -303,8 +302,12 @@ const Auth = () => {
                                 />
                             </>
                         )}
+                        <Link  to="/forgot_password" 
+                    className={classes.forgot_password}
+                    >Forgot your password
+                    </Link>
                     </Grid>
-                    <Button
+                    <Button 
                         type="submit"
                         fullWidth
                         variant="contained"
@@ -313,7 +316,7 @@ const Auth = () => {
                     >
                         {isRegister ? "Register" : "Log In"}
                     </Button>
-                    <Link to="/forgot_password">Forgot your password</Link>
+                    
                     <Grid container justify="center">
                         <Button
                             className={classes.switch}
@@ -328,7 +331,8 @@ const Auth = () => {
                         </Button>
                         <div className="social">
                             <GoogleLogin
-                                clientId={process.env.REACT_APP_GOOGLE_ID}
+                           
+                             clientId={process.env.REACT_APP_GOOGLE_ID}
                                 buttonText="Login with Google"
                                 onSuccess={responseGoogle}
                                 onFailure={failureGoogle}

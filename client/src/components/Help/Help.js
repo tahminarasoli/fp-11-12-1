@@ -20,7 +20,7 @@ import useStyles from './styles';
 </Paper>
 <Typography className={classes.header} variant='h4'>Choose Help</Typography>
   <Grid container justify='center' >
-    <Grid item >
+  <Grid item >
   <Button component={Link} to="/" className={classes.button} fullWidth variant="contained" color='primary'>I Need a Help</Button>
   </Grid>
   <Grid item >

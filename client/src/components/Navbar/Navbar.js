@@ -8,6 +8,7 @@ import {
     Menu,
     MenuItem,
 } from "@material-ui/core";
+import Fade from '@material-ui/core/Fade';
 
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
@@ -24,6 +25,7 @@ const Navbar = () => {
     console.log(user);
 
     const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -56,8 +58,9 @@ const Navbar = () => {
                     alt={user?.name}
                 >
                 </Avatar>
-                <Button
-                    aria-controls="simple-menu"
+                <Button 
+                    className={classes.profile_button}
+                    aria-controls="fade-menu" 
                     aria-haspopup="true"
                     onClick={handleClick}
                 >
@@ -69,20 +72,22 @@ const Navbar = () => {
                 </Button>
                 </div>
                 <Menu
-                    id="simple-menu"
-                    anchorEl={anchorEl}
-                    keepMounted
-                    open={Boolean(anchorEl)}
-                    onClose={handleClose}
+                   id="fade-menu"
+                   anchorEl={anchorEl}
+                   keepMounted
+                   open={open}
+                   onClose={handleClose}
+                   TransitionComponent={Fade}
                 >
                     <MenuItem
-                        onClick={handleProfile}
+                    onClick={handleProfile}
                         component={Link}
                         to="/profile"
                     >
-                        Profile
+                     Profile
                     </MenuItem>
-                    <MenuItem onClick={handleLogout} component={Link} to="/">
+                    <MenuItem 
+                  onClick={handleLogout} component={Link} to="/">
                         Logout
                     </MenuItem>
                 </Menu>
