@@ -21,10 +21,10 @@ import useStyles from './styles';
 <Typography className={classes.header} variant='h4'>Choose Help</Typography>
   <Grid container justify='center' >
   <Grid item >
-  <Button component={Link} to="/" className={classes.button} fullWidth variant="contained" color='primary'>I Need a Help</Button>
+  <Button component={Link} to="/need" className={classes.button} fullWidth variant="contained" color='primary'>I Need a Help</Button>
   </Grid>
   <Grid item >
-  <Button component={Link} to="/" className={classes.button} fullWidth variant="contained" color='primary'>I Want to Help</Button>
+  <Button component={Link} to="/want" className={classes.button} fullWidth variant="contained" color='primary'>I Want to Help</Button>
   </Grid>
   </Grid>
 </Container>

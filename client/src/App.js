@@ -13,6 +13,8 @@ import {
 import axios from "axios";
 import Auth from "./components/Auth/Auth";
 import Navbar from "./components/Navbar/Navbar";
+import Need from "./components/NeedHelp/Need";
+import Want from "./components/WantHelp/Want";
 
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import ResetPassword from "./components/ResetPassword/ResetPassword";
@@ -60,9 +62,11 @@ const App = () => {
         <BrowserRouter>
             <Navbar />
             <Switch>
-                <Route path="/" exact component={Home} />
+                <Route path="/"     exact component={Home} />
                 <Route path="/auth" exact component={Auth} />
                 <Route path="/help" exact component={Help} />
+                <Route path="/need" exact component={Need} />
+                <Route path="/want" exact component={Want} />
 
                 <Route
                     path="/forgot_password"

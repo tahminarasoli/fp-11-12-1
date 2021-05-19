@@ -78,7 +78,7 @@ const Navbar = () => {
                    open={open}
                    onClose={handleClose}
                    TransitionComponent={Fade}
-                >
+                >    
                     <MenuItem
                     onClick={handleProfile}
                         component={Link}
@@ -87,9 +87,18 @@ const Navbar = () => {
                      Profile
                     </MenuItem>
                     <MenuItem 
+                  onClick={handleClose} component={Link} to="/need">
+                        Need Help
+                    </MenuItem>
+                    <MenuItem 
+                  onClick={handleClose} component={Link} to="/want">
+                        Want Help
+                    </MenuItem>
+                    <MenuItem 
                   onClick={handleLogout} component={Link} to="/">
                         Logout
                     </MenuItem>
+                  
                 </Menu>
             </div>
         );
@@ -112,25 +121,7 @@ const Navbar = () => {
                 {isLogged ? (
                     userLink()
                 ) : (
-                    // <div className={classes.profile}>
-                    //     <Avatar
-                    //         className={classes.purple}
-                    //         src={user?.result.imageUrl}
-                    //         alt={user?.result.name}
-                    //     >
-                    //         {user?.result.name.charAt(0)}
-                    //     </Avatar>
-                    //     <Typography className={classes.userName} variant="h6">
-                    //         {user.result.name}
-                    //     </Typography>
-                    //     <Button
-                    //         variant="contained"
-                    //         className={classes.logout}
-                    //         color="secondary"
-                    //     >
-                    //         Log out
-                    //     </Button>
-                    // </div>
+                   
                     <Button
                         component={Link}
                         to="/auth"
