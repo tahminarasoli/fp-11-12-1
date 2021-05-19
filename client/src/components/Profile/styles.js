@@ -1,4 +1,3 @@
-
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
@@ -33,17 +32,9 @@ boxShadow: '2px 2px 4px rgba(134, 140, 143, 0.2), -2px -2px 4px rgba(134, 140, 1
     boxShadow: 'box-shadow: 10px 10px 20px rgba(38, 80, 127, 0.2), -10px -10px 20px rgba(38, 80, 127, 0.2), 10px -10px 20px rgba(90, 188, 255, 0.9), -10px 10px 25px rgba(38, 80, 127, 0.9), inset -1px 1px 2px rgba(90, 188, 255, 0.3), inset 1px -1px 2px rgba(38, 80, 127, 0.5)',
     borderRadius: 30,
  },
- switch: {
+ 
   
-    margin: theme.spacing(3, 0, 2), 
-    background: 'linear-gradient(90deg, #70D3FC 0%, #346AD1 100%)',
-    boxShadow: 'box-shadow: 10px 10px 20px rgba(38, 80, 127, 0.2), -10px -10px 20px rgba(38, 80, 127, 0.2), 10px -10px 20px rgba(90, 188, 255, 0.9), -10px 10px 25px rgba(38, 80, 127, 0.9), inset -1px 1px 2px rgba(90, 188, 255, 0.3), inset 1px -1px 2px rgba(38, 80, 127, 0.5)',
-    borderRadius: 30,
- },
- forgot_password: {
-  color: '#5B5B61',
-  margin: '10px 100px',
-},
+
 
 
 }));

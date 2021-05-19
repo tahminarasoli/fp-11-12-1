@@ -1,15 +1,24 @@
-.errMsg{
-    background: rgb(214, 10, 10);
-    color: #fff9;
+
+.errMsg 
+{
+    
+    color: red ;
     text-align: center;
-    padding: 10px 0;
+    padding: 14px 14px;
+    margin: 20px 0;
     letter-spacing: 1.3px;
+    border-radius: 10px;
+    background:  #F499AB;
+    box-shadow: -1px 1px 2px rgba(255, 214, 239, 0.3), 1px -1px 2px rgba(146, 92, 103, 0.5), inset 10px 10px 20px rgba(146, 92, 103, 0.2), inset -10px -10px 20px rgba(146, 92, 103, 0.2), inset 10px -10px 20px rgba(255, 214, 239, 0.9), inset -10px 10px 25px rgba(146, 92, 103, 0.9);
 }
 
-.successMsg{
-    background: rgb(9, 158, 54);
-    color: #fff9;
+.successMsg {
+    color: white;
+    background: #87C0F4;
+    margin: 20px 0;
     text-align: center;
-    padding: 10px 0;
+    padding: 14px 14px;
     letter-spacing: 1.3px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px rgba(189, 255, 255, 0.3), 1px -1px 2px rgba(81, 115, 146, 0.5), inset 10px 10px 20px rgba(81, 115, 146, 0.2), inset -10px -10px 20px rgba(81, 115, 146, 0.2), inset 10px -10px 20px rgba(189, 255, 255, 0.9), inset -10px 10px 25px rgba(81, 115, 146, 0.9);
 }

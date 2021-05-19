@@ -52,7 +52,16 @@ appBar: {
       color: theme.palette.getContrastText(deepPurple[500]),
       backgroundColor: deepPurple[500],
     },
-  }));
+    profile_button: {
+      width: '220px',
+      height: '60px',
+      color: '#5B5B61',
+      background: 'linear-gradient(135deg, #BBD2DF 0%, #CFE8F7 100%)',
+     boxShadow: '2px 2px 4px rgba(118, 133, 141, 0.2), -2px -2px 4px rgba(118, 133, 141, 0.2), 2px -2px 4px rgba(255, 255, 255, 0.9), -2px 2px 5px rgba(118, 133, 141, 0.9), inset -1px 1px 2px rgba(255, 255, 255, 0.3), inset 1px -1px 2px rgba(118, 133, 141, 0.5)',
+     borderRadius: 30,
+    },
+    
+}));
 
     
     
