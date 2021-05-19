@@ -50,6 +50,9 @@ const Auth = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
+    const googleId = process.env.REACT_APP_GOOGLE_ID;
+    const facebookId = process.env.REACT_APP_FACEBOOK_ID;
+
     const {
         first,
         last,
@@ -211,8 +214,7 @@ const Auth = () => {
     const failureGoogle = (response) => {
         console.log(response);
     };
-    console.log(process.env.REACT_APP_GOOGLE_ID)
-    console.log(process.env.REACT_APP_FACEBOOK_ID)
+    
 
     return (
         <Container component="main" maxWidth="xs">
@@ -334,14 +336,14 @@ const Auth = () => {
                         <div className="social">
                             <GoogleLogin
                            
-                             clientId={process.env.REACT_APP_GOOGLE_ID}
+                             clientId={googleId}
                                 buttonText="Login with Google"
                                 onSuccess={responseGoogle}
                                 onFailure={failureGoogle}
                                 cookiePolicy={"single_host_origin"}
                             />
                             <FacebookLogin
-                                appId={process.env.REACT_APP_FACEBOOK_ID}
+                                appId={facebookId}
                                 autoLoad={false}
                                 fields="name,email,picture"
                                 callback={responseFacebook}
