@@ -9,6 +9,7 @@ import Input from "./Input";
 import { useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { dispatchLogin } from "../../actions/authActions";
+import Footer from '../Footer/Footer';
 
 
 import { GoogleLogin } from "react-google-login";
@@ -218,7 +219,7 @@ const Auth = () => {
     
 
     return (
-        
+        <div>
           <Container component="main" maxWidth="xs">
             <Paper className={classes.paper} elevation={2}>
                 <img
@@ -355,6 +356,8 @@ const Auth = () => {
                 </form>
             </Paper>
         </Container>
+       <Footer />
+     <div/>                               
                                     
     );
 };
