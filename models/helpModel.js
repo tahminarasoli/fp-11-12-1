@@ -1,30 +1,38 @@
-const mongoose= require("mongoose");
+const mongoose = require("mongoose");
 
 const helpSchema = mongoose.Schema({
-
-    name:{
-        
-    },
-    helpTitle:{
-        type: String
-    },
-    description:{
-        type: String
-    },
-    dateChoice:{
+    name: {
         type: String,
-       
-
+        required: [true, "Please enter your name!"],
     },
-    availableSlot:{
-        type: Array,
-        values:["anytime", "08.00-12.00"]
-
+    email: {
+        type: String,
+        required: [true, "Please enter your email!"],
+    },
+    phone: {
+        type: String,
+    },
+    avatar: {
+        type: String,
+    },
+    address: {
+        type: Object,
+    },
+    helpTitle: {
+        type: String,
+        required: [true, "Please enter title for help!"],
+    },
+    description: {
+        type: String,
+        required: [true, "Please enter description for help!"],
+    },
+    availableSlot: {
+        type: String,
     },
     wantsToHelp: {
         type: Boolean,
-        require: true
-    }
+        require: true,
+    },
 });
 
-module.exports = HelpModel = mongoose.model("Help", helpSchema);
+module.exports = HelpModel = mongoose.model("Helps", helpSchema);
