@@ -311,7 +311,7 @@ const Auth = () => {
                         )}
                         <Link  to="/forgot_password" 
                     className={classes.forgot_password}
-                    >Forgot your password
+                    >Forgot your password?
                     </Link>
                     </Grid>
                     <Button 

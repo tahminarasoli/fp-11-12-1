@@ -43,6 +43,7 @@ boxShadow: '2px 2px 4px rgba(134, 140, 143, 0.2), -2px -2px 4px rgba(134, 140, 1
  forgot_password: {
   color: '#5B5B61',
   margin: '10px 100px',
+  textDecoration: 'underline',
 },
 
 

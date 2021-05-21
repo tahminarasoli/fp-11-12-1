@@ -13,8 +13,7 @@ import {
 import axios from "axios";
 import Auth from "./components/Auth/Auth";
 import Navbar from "./components/Navbar/Navbar";
-import Need from "./components/NeedHelp/Need";
-import Want from "./components/WantHelp/Want";
+
 
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import ResetPassword from "./components/ResetPassword/ResetPassword";
@@ -22,6 +21,7 @@ import ResetPassword from "./components/ResetPassword/ResetPassword";
 import ActivationEmail from "./components/Activation/ActivationEmail";
 import Profile from "./components/Profile/Profile";
 import EditUser from "./components/EditUser/EditUser";
+
 
 import NotFound from "./utils/notFound/notFound";
 
@@ -65,9 +65,8 @@ const App = () => {
                 <Route path="/"     exact component={Home} />
                 <Route path="/auth" exact component={Auth} />
                 <Route path="/help" exact component={Help} />
-                <Route path="/need" exact component={Need} />
-                <Route path="/want" exact component={Want} />
-
+              
+                
                 <Route
                     path="/forgot_password"
                     component={isLogged ? NotFound : ForgotPassword}

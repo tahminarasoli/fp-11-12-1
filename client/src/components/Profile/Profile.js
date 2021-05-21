@@ -231,7 +231,10 @@ const Profile = () => {
                     <Typography variant="h5">
                         {isAdmin ? "Admin Profile" : "User Profile"}
                         </Typography>
-                        <form className={classes.form}>
+                        <form 
+                        className={classes.form}
+                        
+                        >
                         <div className="avatar">
                         <img src={avatar ? avatar : user.avatar} alt="" />
                         <span>
@@ -255,6 +258,7 @@ const Profile = () => {
                             defaultValue={user?.name}
                             name="name"
                             half
+                            
                           />
                         <Input
                             label="Email Address"
