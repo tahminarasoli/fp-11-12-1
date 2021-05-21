@@ -219,7 +219,7 @@ const Auth = () => {
     
 
     return (
-        <div>
+       <div>
           <Container component="main" maxWidth="xs">
             <Paper className={classes.paper} elevation={2}>
                 <img
@@ -357,7 +357,7 @@ const Auth = () => {
             </Paper>
         </Container>
        <Footer />
-     <div/>                               
+     </div>                           
                                     
     );
 };
