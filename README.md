@@ -26,7 +26,6 @@ A model of how you can set up your project for development, testing & deployment
 
 ## General
 
-[![HELPY](https://res.cloudinary.com/marcomontalbano/image/upload/v1621596556/video_to_markdown/images/youtube--znvrIiLR9ZQ-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/znvrIiLR9ZQ "HELPY")
 
 ### HELPY
 
