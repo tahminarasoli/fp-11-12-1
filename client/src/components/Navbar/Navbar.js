@@ -86,13 +86,10 @@ const Navbar = () => {
                     >
                      Profile
                     </MenuItem>
+                    
                     <MenuItem 
-                  onClick={handleClose} component={Link} to="/need">
-                        Need Help
-                    </MenuItem>
-                    <MenuItem 
-                  onClick={handleClose} component={Link} to="/want">
-                        Want Help
+                  onClick={handleClose} component={Link} to="/help">
+                        Help
                     </MenuItem>
                     <MenuItem 
                   onClick={handleLogout} component={Link} to="/">
