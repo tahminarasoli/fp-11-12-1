@@ -11,9 +11,25 @@ const API = axios.create({ baseURL: "http://localhost:5000" });
 //   return req;
 // });
 
-
-export const showHomePage = () => API.get("/api/home");
-
-export const fetchCards = () => axios.get(url);
+export const fetchHelps = (token) =>
+    API.get("/api/help/getAllHelps", {
+        headers: { Authorization: token },
+    });
+export const fetchHelp = (id,token) =>
+    API.get(`/api/help/getHelp/${id}`, {
+        headers: { Authorization: token },
+    });
+export const createHelp = (newHelp, token) =>
+    API.post("/api/help/create", newHelp, {
+        headers: { Authorization: token },
+    });
+export const updateHelp = (id, updatedHelp, token) =>
+    API.patch(`/api/help/update/${id}`, updatedHelp, {
+        headers: { Authorization: token },
+    });
+export const deleteHelp = (id, token) =>
+    API.delete(`/api/help/delete/${id}`, {
+        headers: { Authorization: token },
+    });
 
 
