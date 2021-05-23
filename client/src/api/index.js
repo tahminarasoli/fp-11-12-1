@@ -14,4 +14,6 @@ const API = axios.create({ baseURL: "http://localhost:5000" });
 
 export const showHomePage = () => API.get("/api/home");
 
+export const fetchCards = () => axios.get(url);
+
 

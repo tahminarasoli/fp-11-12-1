@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Home from "./components/Home/Home";
-import Help from "./components/Help/Help";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -17,13 +16,14 @@ import Navbar from "./components/Navbar/Navbar";
 
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import ResetPassword from "./components/ResetPassword/ResetPassword";
-
+import HelpPage from "./components/HelpPage/HelpPage"
 import ActivationEmail from "./components/Activation/ActivationEmail";
 import Profile from "./components/Profile/Profile";
 import EditUser from "./components/EditUser/EditUser";
 
 
 import NotFound from "./utils/notFound/notFound";
+
 
 const App = () => {
     const dispatch = useDispatch();
@@ -64,7 +64,7 @@ const App = () => {
             <Switch>
                 <Route path="/"     exact component={Home} />
                 <Route path="/auth" exact component={Auth} />
-                <Route path="/help" exact component={Help} />
+                <Route path="/help" exact component={HelpPage} />
               
                 
                 <Route
