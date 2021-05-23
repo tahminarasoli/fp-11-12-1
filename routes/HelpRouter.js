@@ -15,6 +15,13 @@ const auth = require('../middleware/auth.js')
 router.get("/getAllHelps", auth, helpController.getHelps);
 
 /** 
+ * @route GET /api/help/getHelp/:id
+ * @desc Get all helps endpoint
+ * @access Private
+*/
+router.get("/getHelp/:id", auth, helpController.getHelp);
+
+/** 
  * @route POST /api/help/create
  * @desc Create help endpoint
  * @access Private

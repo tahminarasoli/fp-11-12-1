@@ -286,7 +286,7 @@ const Profile = () => {
                             id="cf_password"
                             defaultValue={cf_password}
                             name="cf_password"
-                            onChange={handleChangeInput}
+                            handleChangeInput={handleChangeInput}
                            half
                         />
 
@@ -345,7 +345,7 @@ const Profile = () => {
                    
                      </Grid>
                     <Button 
-                     type="submit"
+                     
                      fullWidth
                      variant="contained"
                      color="primary"

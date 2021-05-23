@@ -13,6 +13,16 @@ const helpController = {
             res.status(404).json({ message: error.message });
         }
     },
+    getHelp: async (req, res) => {
+        const { id: _id } = req.params;
+        try {
+            const help = await HelpModel.findById({ _id });
+
+            res.status(200).json(help);
+        } catch (error) {
+            res.status(404).json({ message: error.message });
+        }
+    },
     createHelp: async (req, res) => {
         const user = await UserModel.findById({ _id: req.user.id }).select(
             "-password"
@@ -39,9 +49,7 @@ const helpController = {
         try {
             await newHelp.save();
 
-            res.status(201).json({
-                msg: "Help succesfully created!",
-            });
+            res.status(201).json(newHelp);
         } catch (error) {
             res.status(409).json({ message: error.message });
         }
@@ -62,12 +70,10 @@ const helpController = {
             return res.status(404).json({ msg: "There is no help with that id!" });
         }
 
-        await HelpModel.findByIdAndUpdate(_id, newHelp, {
+        const updatedHelp = await HelpModel.findByIdAndUpdate(_id, newHelp, {
             new: true,
         });
-        return res.status(200).json({
-            msg: "Help succesfully updated!",
-        });
+        return res.status(200).json(updatedHelp);
     },
     deleteHelp: async (req, res) => {
         const { id: _id } = req.params;
