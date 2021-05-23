@@ -3,7 +3,7 @@ const router = express.Router();
 
 const userRouter = require('./userRouter');
 const uploadRouter = require('./uploadRouter');
-const helpRouter = require('./helpRouter')
+const helpRouter = require('./HelpRouter')
 
 // Only "/api" endpoint
 
