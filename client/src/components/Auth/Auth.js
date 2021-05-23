@@ -219,7 +219,7 @@ const Auth = () => {
     
 
     return (
-       <div>
+      
           <Container component="main" maxWidth="xs">
             <Paper className={classes.paper} elevation={2}>
                 <img
@@ -355,9 +355,9 @@ const Auth = () => {
                     </Grid>
                 </form>
             </Paper>
-        </Container>
-       <Footer />
-     </div>                           
+           </Container>
+         
+                            
                                     
     );
 };

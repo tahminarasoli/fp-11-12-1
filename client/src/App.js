@@ -23,6 +23,7 @@ import EditUser from "./components/EditUser/EditUser";
 
 
 import NotFound from "./utils/notFound/notFound";
+import Footer from "./components/Footer/Footer";
 
 
 const App = () => {
@@ -95,7 +96,9 @@ const App = () => {
                     exact
                 />
             </Switch>
+            <Footer/>
         </BrowserRouter>
+   
     );
 };
 
