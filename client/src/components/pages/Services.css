@@ -1,0 +1,12 @@
+.Services{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+}
+
+.Services p{
+  color: black;
+  font-size:24px;
+  font-weight: bold;
+}

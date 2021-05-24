@@ -1,0 +1,52 @@
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1em;
+}
+.title h1{
+  display: flex;
+  justify-content: center;
+  align-items : center;
+  margin-top: 1rem; 
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  margin-top: 5rem;
+  margin-left: 100px;
+}
+
+
+.about{
+  display: flex;
+  justify-content: center;
+  align-items : center;
+  margin-top: 5rem;
+  width: 30%;
+  
+}
+
+.about p{
+  color: black;
+}
+
+@media screen and (max-width: 480px){
+  .about p{
+    text-align: center;
+    width: 100%;
+  }
+.section{
+  display: flex;
+  justify-content: center;
+  align-items : center;
+  width: 100%;
+  columns: reverse;
+}
+
+
+}
