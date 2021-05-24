@@ -19,23 +19,25 @@ const Helps = ({ setCurrentId }) => {
     console.log(helps);
 
     return (
+        
         <Grid
             className={classes.container}
-            container
-            alignItems="stretch"
-            spacing={3}
-        >
-            <Grid item xs={12} sm={6}>
-                {helps.map((help) => (
-                    <Help
-                        key={help._id}
+           container
+           alignItems="stretch" 
+           spacing={3}
+          >
+          {helps.map((help) => (
+            <Grid  key={help._id} item xs={12} sm={12} md={6} lg={3}  >
+                 <Help
                         help={help}
                         setCurrentId={setCurrentId}
                     />
+                    </Grid>
                 ))}
-            </Grid>
+           
         </Grid>
     );
+    
 };
 
 export default Helps;
