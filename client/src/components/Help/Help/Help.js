@@ -51,7 +51,7 @@ const Help = ({ help, setCurrentId, }) => {
                 </Avatar>
             }
             
-                title={help?.address.city}
+                title={help?.address?.city}
                  subheader={`Avialable: ${help?.availableSlot}`}
                 
             />
