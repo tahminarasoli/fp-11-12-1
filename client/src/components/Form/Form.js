@@ -62,7 +62,8 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
     };
 
     return (
-        <Paper className={classes.paper}>
+        <Paper className={classes.paper} elevation={6}>
+             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`}  onSubmit={handleSubmit}>
             <img src={logo1} alt="logo1" height="50" />
             <Typography variant="h5">
                 {currentId ? "Update" : "Create"}
@@ -79,13 +80,9 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
             >
                 {wantsToHelp ? " I Need a Help?" : "I Want to Help? "}
             </Button>
-            <form
-                autoComplete="off"
-                noValidate
-                className={`${classes.root} ${classes.form}`}
-                onSubmit={handleSubmit}
-            >
-                {wantsToHelp && (
+           
+             
+{wantsToHelp && (
                     <>
                         <TextField
                             className={classes.input}
@@ -216,6 +213,7 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
                     color="#5B5B61"
                     onClick={handleClear}
                     fullWidth
+                    
                 >
                     Clear
                 </Button>
