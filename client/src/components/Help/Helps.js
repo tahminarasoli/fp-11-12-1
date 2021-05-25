@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Help from "./Help/Help";
+import NeedHelp from "./Help/NeedHelp";
 import useStyles from "./styles";
 import { Grid } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
@@ -40,7 +41,7 @@ const Helps = ({ setCurrentId, wantsToHelp }) => {
                                 md={6}
                                 lg={3}
                             >
-                                <Help help={help} setCurrentId={setCurrentId} />
+                                <NeedHelp help={help} setCurrentId={setCurrentId} />
                             </Grid>
                         ))}
                     </Grid>
@@ -100,7 +101,7 @@ const Helps = ({ setCurrentId, wantsToHelp }) => {
                                 md={6}
                                 lg={3}
                             >
-                                <Help help={help} setCurrentId={setCurrentId} />
+                                <NeedHelp help={help} setCurrentId={setCurrentId} />
                             </Grid>
                         ))}
                     </Grid>
