@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import Home from "./components/Home/Home";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
+import HelpDetails from "./components/HelpDetails/HelpDetails";
 import { useDispatch, useSelector } from "react-redux";
 import {
     dispatchLogin,
@@ -22,8 +23,10 @@ import Profile from "./components/Profile/Profile";
 import EditUser from "./components/EditUser/EditUser";
 
 
+
 import NotFound from "./utils/notFound/notFound";
 import Footer from "./components/Footer/Footer";
+import ContactForm from "./components/ContactForm/ContactForm";
 
 
 const App = () => {
@@ -65,7 +68,10 @@ const App = () => {
             <Switch>
                 <Route path="/"     exact component={Home} />
                 <Route path="/auth" exact component={Auth} />
-                <Route path="/help" exact component={HelpPage} />
+                <Route path="/" exact component={() => <Redirect to="/helps" />} />
+                <Route path="/helps" exact component={HelpPage} />
+                <Route path="/helps/:id"  component={HelpDetails} />
+                <Route path="/contact"  component={ContactForm} />
               
                 
                 <Route

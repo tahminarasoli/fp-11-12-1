@@ -148,7 +148,7 @@ const Auth = () => {
                 localStorage.setItem("firstLogin", true);
 
                 dispatch(dispatchLogin());
-                history.push("/help");
+                history.push("/helps");
             } catch (err) {
                 err.response?.data.msg &&
                     setFormData({
@@ -179,7 +179,7 @@ const Auth = () => {
             localStorage.setItem("firstLogin", true);
 
             dispatch(dispatchLogin());
-            history.push("/help");
+            history.push("/helps");
         } catch (err) {
             err.response.data.msg &&
                 setFormData({
@@ -202,7 +202,7 @@ const Auth = () => {
             localStorage.setItem("firstLogin", true);
 
             dispatch(dispatchLogin());
-            history.push("/help");
+            history.push("/helps");
         } catch (err) {
             err.response.data.msg &&
                 setFormData({

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, } from "react";
 import {
     AppBar,
     Avatar,
@@ -86,9 +86,12 @@ const Navbar = () => {
                     >
                      Profile
                     </MenuItem>
-                    
                     <MenuItem 
-                  onClick={handleClose} component={Link} to="/help">
+                  onClick={handleClose} component={Link} to="/">
+                        Home
+                    </MenuItem>
+                    <MenuItem 
+                  onClick={handleClose} component={Link} to="/helps">
                         Help
                     </MenuItem>
                     <MenuItem 

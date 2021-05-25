@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-import { Grow, Container, Grid } from "@material-ui/core";
+import { Grow, Container, Grid, Paper, TextField, AppBar, Button } from "@material-ui/core";
+import Paginate from  '../../Pagination'
 import Helps from "../Help/Helps";
 import Form from "../Form/Form";
 import useStyles from "./styles";
+import { useDispatch } from "react-redux";
 
 const HelpPage = () => {
     const classes = useStyles();
@@ -20,11 +22,13 @@ const HelpPage = () => {
                     spacing={3}
                     className={classes.gridContainer}
                 >
+                      
                     <Grid item xs={12} sm={6} md={9}>
                         <Helps
                             wantsToHelp={wantsToHelp}
                             setCurrentId={setCurrentId}
                         />
+                      
                     </Grid>
 
                     <Grid item xs={12} sm={6} md={3}>
@@ -33,6 +37,7 @@ const HelpPage = () => {
                             setWantsToHelp={setWantsToHelp}
                             currentId={currentId}
                         />
+                            <Paginate align='center'/>
                     </Grid>
                 </Grid>
             </Container>

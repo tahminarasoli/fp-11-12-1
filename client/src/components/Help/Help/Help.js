@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import useStyles from "./styles";
-import moment from "moment";
+
 import {
     CardActions,
     Fab,
@@ -14,7 +14,7 @@ import ContactPhoneIcon from '@material-ui/icons/ContactPhone';
 
 
 import EditIcon from '@material-ui/icons/Edit';
-
+import { Link }  from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteHelp } from '../../../actions/helpsActions'
 import { getHelp } from '../../../actions/helpAction'
@@ -74,12 +74,15 @@ const Help = ({ help, setCurrentId, }) => {
                     <Fab
                     color='primary'
                     size='small'
+                    component={Link}
+                    to="/contact"
                 aria-label="contact" 
                 className={classes.contact}
                 onClick={handleContact}
                 >
                      <ContactPhoneIcon />
                     </Fab>
+                   
                     <Fab 
                 size='small'
                 color="primary" 
