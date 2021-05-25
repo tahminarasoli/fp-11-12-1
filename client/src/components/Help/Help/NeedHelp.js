@@ -19,7 +19,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { deleteHelp } from '../../../actions/helpsActions'
 import { getHelp } from '../../../actions/helpAction'
 
-const Help = ({ help, setCurrentId, }) => {
+const NeedHelp = ({ help, setCurrentId, }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
     
@@ -35,9 +35,11 @@ const Help = ({ help, setCurrentId, }) => {
     const handleContact = () => {
 
     }
+
+
     return (
         <Card 
-        className={classes.card} 
+        className={classes.card1} 
         raised 
         elevation={6}>
             <CardHeader 
@@ -75,7 +77,7 @@ const Help = ({ help, setCurrentId, }) => {
                     color='primary'
                     size='small'
                 aria-label="contact" 
-                className={classes.contact}
+                className={classes.contact1}
                 onClick={handleContact}
                 >
                      <ContactPhoneIcon />
@@ -84,12 +86,12 @@ const Help = ({ help, setCurrentId, }) => {
                 size='small'
                 color="primary" 
                 aria-label="edit" 
-                className={classes.edit}  
+                className={classes.contact1}  
                 onClick={handleUpdate}>
                   <EditIcon />
                 </Fab>
                     <Fab 
-                 className={classes.delete}   
+                 className={classes.contact1}   
                 size='small'
                 aria-label="delete" 
                 color='primary'
@@ -104,5 +106,4 @@ const Help = ({ help, setCurrentId, }) => {
     );
 };
 
-export default Help;
-
+export default NeedHelp; 
