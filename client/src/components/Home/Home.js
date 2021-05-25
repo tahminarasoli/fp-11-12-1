@@ -9,10 +9,10 @@ const Home = () => {
   
     const dataFromDatabase = useSelector((state) => state.showHome);
     return (
-        <div>
+       
         <Showcase />
-      <Footer />
-     </div>
+    
+    
       
     );
   }

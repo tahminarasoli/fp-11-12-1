@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Home from "./components/Home/Home";
-import Help from "./components/Help/Help";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 
@@ -17,15 +16,17 @@ import Navbar from "./components/Navbar/Navbar";
 
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import ResetPassword from "./components/ResetPassword/ResetPassword";
-
+import HelpPage from "./components/HelpPage/HelpPage"
 import ActivationEmail from "./components/Activation/ActivationEmail";
 import Profile from "./components/Profile/Profile";
 import EditUser from "./components/EditUser/EditUser";
 
 import NotFound from "./utils/notFound/notFound";
+
 import Contact from "./components/pages/Contact";
 import About from "./components/pages/About";
 import Services from "./components/pages/Services";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -99,8 +100,10 @@ const App = () => {
           exact
         />
       </Switch>
+      <Footer/>
     </BrowserRouter>
   );
+
 };
 
 export default App;
