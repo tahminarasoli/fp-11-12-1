@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, } from "react";
 import {
   AppBar,
   Avatar,
@@ -39,6 +39,7 @@ const Navbar = () => {
 
   const showSidebar = () => setSidebar(!sidebar);
 
+
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -55,6 +56,7 @@ const Navbar = () => {
     window.location.href = "/";
     handleClose();
   };
+
 
   const userLink = () => {
     return (

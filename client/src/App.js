@@ -1,8 +1,13 @@
 import React, { useEffect } from "react";
 import Home from "./components/Home/Home";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+
+
 import "./App.css";
 
+
+import HelpDetails from "./components/HelpDetails/HelpDetails";
 import { useDispatch, useSelector } from "react-redux";
 import {
   dispatchLogin,
@@ -21,7 +26,11 @@ import ActivationEmail from "./components/Activation/ActivationEmail";
 import Profile from "./components/Profile/Profile";
 import EditUser from "./components/EditUser/EditUser";
 
+
 import NotFound from "./utils/notFound/notFound";
+import Footer from "./components/Footer/Footer";
+import ContactForm from "./components/ContactForm/ContactForm";
+
 
 import Contact from "./components/pages/Contact";
 import About from "./components/pages/About";
@@ -29,80 +38,83 @@ import Services from "./components/pages/Services";
 import Footer from "./components/Footer/Footer";
 
 const App = () => {
-  const dispatch = useDispatch();
-  const token = useSelector((state) => state.token);
-  const auth = useSelector((state) => state.auth);
 
-  const { isLogged, isAdmin } = auth;
+    const dispatch = useDispatch();
+    const token = useSelector((state) => state.token);
+    const auth = useSelector((state) => state.auth);
 
-  useEffect(() => {
-    const firstLogin = localStorage.getItem("firstLogin");
-    if (firstLogin) {
-      const getToken = async () => {
-        const res = await axios.post("/api/user/refresh_token", null);
-        // console.log(res)
-        dispatch({ type: "GET_TOKEN", payload: res.data.access_token });
-      };
-      getToken();
-    }
-  }, [auth.isLogged, dispatch]);
+    const { isLogged, isAdmin } = auth;
 
-  useEffect(() => {
-    if (token) {
-      const getUser = () => {
-        dispatch(dispatchLogin());
+    useEffect(() => {
+        const firstLogin = localStorage.getItem("firstLogin");
+        if (firstLogin) {
+            const getToken = async () => {
+                const res = await axios.post("/api/user/refresh_token", null);
+                // console.log(res)
+                dispatch({ type: "GET_TOKEN", payload: res.data.access_token });
+            };
+            getToken();
+        }
+    }, [auth.isLogged, dispatch]);
 
-        return fetchUser(token).then((res) => {
-          dispatch(dispatchGetUser(res));
-        });
-      };
+    useEffect(() => {
+        if (token) {
+            const getUser = () => {
+                dispatch(dispatchLogin());
 
-      getUser();
-    }
-  }, [token, dispatch]);
+                return fetchUser(token).then((res) => {
+                    dispatch(dispatchGetUser(res));
+                });
+            };
 
-  return (
-    <BrowserRouter>
-      <Navbar />
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/auth" exact component={Auth} />
-        <Route path="/help" exact component={HelpPage} />
-        <Route path="/Contact" exact component={Contact} />
-        <Route path="/Services" exact component={Services} />
-        <Route path="/About" exact component={About} />
+            getUser();
+        }
+    }, [token, dispatch]);
 
-        <Route
-          path="/forgot_password"
-          component={isLogged ? NotFound : ForgotPassword}
-          exact
-        />
-        <Route
-          path="/reset/:token"
-          component={isLogged ? NotFound : ResetPassword}
-          exact
-        />
+    return (
+        <BrowserRouter>
+            <Navbar />
+            <Switch>
+                <Route path="/"     exact component={Home} />
+                <Route path="/auth" exact component={Auth} />
+                <Route path="/" exact component={() => <Redirect to="/helps" />} />
+                <Route path="/helps" exact component={HelpPage} />
+                <Route path="/helps/:id"  component={HelpDetails} />
+                <Route path="/contact"  component={ContactForm} />
+              
+                
+                <Route
+                    path="/forgot_password"
+                    component={isLogged ? NotFound : ForgotPassword}
+                    exact
+                />
+                <Route
+                    path="/reset/:token"
+                    component={isLogged ? NotFound : ResetPassword}
+                    exact
+                />
 
-        <Route
-          path="/profile"
-          component={isLogged ? Profile : NotFound}
-          exact
-        />
-        <Route
-          path="/edit_user/:id"
-          component={isAdmin ? EditUser : NotFound}
-          exact
-        />
+                <Route
+                    path="/profile"
+                    component={isLogged ? Profile : NotFound}
+                    exact
+                />
+                <Route
+                    path="/edit_user/:id"
+                    component={isAdmin ? EditUser : NotFound}
+                    exact
+                />
 
-        <Route
-          path="/activate/:activation_token"
-          component={ActivationEmail}
-          exact
-        />
-      </Switch>
-      <Footer/>
-    </BrowserRouter>
-  );
+                <Route
+                    path="/activate/:activation_token"
+                    component={ActivationEmail}
+                    exact
+                />
+            </Switch>
+            <Footer/>
+        </BrowserRouter>
+   
+    );
 
 };
 

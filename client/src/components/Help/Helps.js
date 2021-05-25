@@ -6,6 +6,7 @@ import { Grid } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { getHelps } from "../../actions/helpsActions";
 
+
 const Helps = ({ setCurrentId, wantsToHelp }) => {
     const classes = useStyles();
     
@@ -40,8 +41,9 @@ const Helps = ({ setCurrentId, wantsToHelp }) => {
                                 sm={12}
                                 md={6}
                                 lg={3}
-                            >
+                            >   
                                 <NeedHelp help={help} setCurrentId={setCurrentId} />
+                               
                             </Grid>
                         ))}
                     </Grid>
@@ -61,6 +63,8 @@ const Helps = ({ setCurrentId, wantsToHelp }) => {
                                 lg={3}
                             >
                                 <Help help={help} setCurrentId={setCurrentId} />
+                             
+                                
                             </Grid>
                         ))}
                     </Grid>
@@ -83,9 +87,11 @@ const Helps = ({ setCurrentId, wantsToHelp }) => {
                                 lg={3}
                             >
                                 <Help help={help} setCurrentId={setCurrentId} />
+                               
                             </Grid>
                         ))}
                     </Grid>
+                
                     <Grid
                         className={classes.container}
                         container
