@@ -71,9 +71,9 @@ const NeedHelp = ({ help, setCurrentId, }) => {
                     </Typography>
                
             </CardContent>
-       {user.user.email === help.email ? (
+       
                 <CardActions className={classes.cardActions}>
-                    <Fab
+                <Fab
                     color='primary'
                     size='small'
                 aria-label="contact" 
@@ -82,6 +82,8 @@ const NeedHelp = ({ help, setCurrentId, }) => {
                 >
                      <ContactPhoneIcon />
                     </Fab>
+                {user.user.email === help.email ? (
+                   <>
                     <Fab 
                 size='small'
                 color="primary" 
@@ -99,8 +101,10 @@ const NeedHelp = ({ help, setCurrentId, }) => {
                     >
                 <DeleteIcon />
                     </Fab>
+                    </>
+) : null}
                 </CardActions>
-            ) : null}
+            
          
         </Card>
     );

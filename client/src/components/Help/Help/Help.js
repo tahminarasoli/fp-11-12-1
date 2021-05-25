@@ -69,7 +69,7 @@ const Help = ({ help, setCurrentId, }) => {
                     </Typography>
                
             </CardContent>
-       {user.user.email === help.email ? (
+       
                 <CardActions className={classes.cardActions}>
                     <Fab
                     color='primary'
@@ -101,7 +101,7 @@ const Help = ({ help, setCurrentId, }) => {
                 <DeleteIcon />
                     </Fab>
                 </CardActions>
-            ) : null}
+            
          
         </Card>
     );

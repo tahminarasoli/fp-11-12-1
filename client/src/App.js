@@ -1,19 +1,23 @@
 import React, { useEffect } from "react";
 import Home from "./components/Home/Home";
+
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+
+
+import "./App.css";
+
 
 import HelpDetails from "./components/HelpDetails/HelpDetails";
 import { useDispatch, useSelector } from "react-redux";
 import {
-    dispatchLogin,
-    fetchUser,
-    dispatchGetUser,
+  dispatchLogin,
+  fetchUser,
+  dispatchGetUser,
 } from "./actions/authActions";
 
 import axios from "axios";
 import Auth from "./components/Auth/Auth";
 import Navbar from "./components/Navbar/Navbar";
-
 
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import ResetPassword from "./components/ResetPassword/ResetPassword";
@@ -23,13 +27,18 @@ import Profile from "./components/Profile/Profile";
 import EditUser from "./components/EditUser/EditUser";
 
 
-
 import NotFound from "./utils/notFound/notFound";
 import Footer from "./components/Footer/Footer";
 import ContactForm from "./components/ContactForm/ContactForm";
 
 
+import Contact from "./components/pages/Contact";
+import About from "./components/pages/About";
+import Services from "./components/pages/Services";
+import Footer from "./components/Footer/Footer";
+
 const App = () => {
+
     const dispatch = useDispatch();
     const token = useSelector((state) => state.token);
     const auth = useSelector((state) => state.auth);
@@ -106,6 +115,7 @@ const App = () => {
         </BrowserRouter>
    
     );
+
 };
 
 export default App;

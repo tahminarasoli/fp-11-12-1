@@ -1,0 +1,90 @@
+.contact{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;  
+} 
+
+
+.img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+}
+
+.img{
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  height: 50%;
+  margin-left: auto;
+  position: sticky;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:  60vh;
+  max-width: 500px;
+  border-radius: 5rem;
+  margin-left: 5rem; 
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+
+}
+
+textarea{
+    width: 98%;
+    height: 100px;
+    font-size: 18px;
+    margin-top: 5px;
+}
+.error {
+  color: red;
+  font-size: 0.7em sans-serif;
+  font-weight: bold;
+}
+
+.success {
+  color: rgb(65, 189, 65);
+  font-size: 1em sans-serif;
+  font-weight: bold;
+}
+
+
+@media only screen and (max-width: 480px){
+    .main{
+      display: flex;
+      justify-content: center;
+      align-self:center;
+      
+    }
+    .img{
+    visibility: hidden;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+  }
+
+
+
+}
+
