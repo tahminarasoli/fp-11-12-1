@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Paper, TextField, Typography } from "@material-ui/core";
+import { Button, Card, TextField, Typography, CardHeader, Avatar, Container } from "@material-ui/core";
 import logo1 from "../../images/logo1.png";
 import useStyles from "./styles";
-import axios from "axios";
+import ConfirmModal from "../../utils/confirmation/ConfirmModal";
 
 import { getHelp } from "../../actions/helpAction";
 import { toSend } from "../../actions/sendAction";
@@ -22,6 +22,7 @@ export const ContactForm = () => {
     const token = useSelector((state) => state.token);
     const help = useSelector((state) => state.help);
     const user = useSelector((state) => state.auth);
+    const [confirm, setConfirm] = useState();
 
     const [cardData, setCardData] = useState(initialValues);
 
@@ -42,7 +43,10 @@ export const ContactForm = () => {
             messageTitle: title,
             messageContent: content,
         };
-
+        setConfirm({
+            title: "Message is sent successfully!",
+            message: "For fast help you can call the user. "
+        }); 
         dispatch(toSend(body));
 
         handleClear();
@@ -55,25 +59,48 @@ export const ContactForm = () => {
         setCardData(initialValues);
     };
 
+    const handleConfirm = () => {
+        setConfirm(null);
+    }
+
     return (
-        <Paper className={classes.paper}>
+        <Container component="main" maxWidth="xs">
+        <Card 
+        raised
+        className={classes.paper}>
             <form
                 autoComplete="off"
                 noValidate
-                className={`${classes.root} ${classes.form}`}
+                className={classes.form}
                 onSubmit={handleSubmit}
             >
+                 {confirm &&  <ConfirmModal title={confirm.title} message={confirm.message} onConfirm={handleConfirm}/>}
                 <div align="center">
                     <img src={logo1} alt="logo1" height="50" />
                     <Typography variant="h5"></Typography>
                     <Typography variant="h5">Send a message</Typography>
-                </div>
-
+               
+                <CardHeader align='center'
+            avatar={
+                <Avatar 
+                title={help?.name}
+                className={classes.large}
+                src={help?.avatar}
+                alt={help?.name}
+           >
+                </Avatar>
+            }
+            
+                title={help?.name}
+                 subheader={`Tel: ${help?.phone}`}
+                
+            />
+       </div>
                 <>
                     <TextField
                         className={classes.input}
                         name="messageTitle"
-                        label="messageTitle?"
+                        label="Title"
                         variant="outlined"
                         id="name"
                         value={cardData.messageTitle}
@@ -90,10 +117,12 @@ export const ContactForm = () => {
                     <TextField
                         className={classes.input}
                         name="messageContent"
-                        label="messageContent"
+                        label="Message:"
                         variant="outlined"
                         value={cardData.messageContent}
                         fullWidth
+                        multiline
+                        rows={4}
                         changeHandler={changeHandler}
                         onChange={(e) =>
                             setCardData({
@@ -111,7 +140,7 @@ export const ContactForm = () => {
                     type="submit"
                     fullWidth
                 >
-                    Submit
+                    Contact
                 </Button>
                 <Button
                     className={classes.buttonClear}
@@ -123,7 +152,8 @@ export const ContactForm = () => {
                     Clear
                 </Button>
             </form>
-        </Paper>
+        </Card>
+        </Container>
     );
 };
 export default ContactForm;

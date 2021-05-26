@@ -91,8 +91,10 @@ const Navbar = () => {
           <MenuItem onClick={handleProfile} component={Link} to="/profile">
             Profile
           </MenuItem>
-
-          <MenuItem onClick={handleClose} component={Link} to="/help">
+          <MenuItem onClick={handleClose} component={Link} to="/home">
+            Home
+          </MenuItem>
+          <MenuItem onClick={handleClose} component={Link} to="/helps">
             Help
           </MenuItem>
           <MenuItem onClick={handleLogout} component={Link} to="/">

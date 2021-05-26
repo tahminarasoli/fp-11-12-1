@@ -17,7 +17,7 @@ backdrop: {
     borderRadius: 30,
     position: 'fixed',
     top: '30vh',
-    left: '30%',
+    left: '36%',
     zIndex: 100,
     overflow: 'hidden',
     display: 'flex',

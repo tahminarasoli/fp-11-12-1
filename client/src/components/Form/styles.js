@@ -9,7 +9,7 @@ export default makeStyles((theme) => ({
   paper: {
   
     padding: theme.spacing(2),
-    margin: '30px 0',
+    margin: '50px 0',
     background: 'linear-gradient(135deg, #CFE8F7 0%, #BBD2DF 100%)',
     boxShadow: '11px 11px 22px rgba(118, 133, 141, 0.2), -11px -11px 22px rgba(118, 133, 141, 0.2), 11px -11px 22px rgba(255, 255, 255, 0.9), -11px 11px 28px rgba(118, 133, 141, 0.9), inset -1px 1px 2px rgba(255, 255, 255, 0.3), inset 1px -1px 2px rgba(118, 133, 141, 0.5)',
     borderRadius: 30,
