@@ -73,7 +73,12 @@ const sendEmail = (type, to, content, title, from = SENDER_EMAIL_ADDRESS) => {
                 ${title}
                 </p>
                 
-        
+                <div>
+                <p> You can contact with me at: 
+            
+                ${from}
+                </p>
+                </div>
             
                 <div>${content}</div>
                 </div>
