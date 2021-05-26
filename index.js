@@ -5,6 +5,12 @@ const cookieParser = require("cookie-parser");
 const fileUpload = require("express-fileupload");
 const path = require("path");
 
+const swaggerUi = require('swagger-ui-express');
+const yaml = require('yamljs');
+
+const swaggerDefinition = yaml.load('./swagger.yaml')
+
+
 const router = require('./routes/router');
 const connectDB = require("./models/connectDB");
 
@@ -19,6 +25,8 @@ app.use(cookieParser());
 app.use(fileUpload({
     useTempFiles: true
 }));
+
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDefinition))
 
 app.use("/api", router);
 

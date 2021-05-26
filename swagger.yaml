@@ -1,0 +1,231 @@
+openapi: 3.0.0
+info:
+  title: HELPY_APP
+  description: HELPY_APP API's
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000/
+    description: Localhost development server 
+  - url: https://helpy-hyf.herokuapp.com/
+    description: Heroku remote server
+components:
+  securitySchemes:
+    ApiKeyAuth:        # arbitrary name for the security scheme
+      type: apiKey
+      in: header       # can be "header", "query" or "cookie"
+      name: Authorization
+
+  schemas:
+    Help:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        avatar:
+          type: string
+        address:
+          type: object
+        helpTitle:
+          type: string
+        description:
+          type: string
+        availableSlot:
+          type: string
+        wantsToHelp:
+          type: boolean
+    
+    User:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        phone:
+          type: string
+        role:
+          type: number
+        avatar:
+          type: string
+        address:
+          type: object
+          properties:
+            address: 
+              type: string
+            streetName: 
+              type: string
+            box: 
+              type: string
+            zipCode: 
+              type: string
+
+paths:
+
+  /user/register:
+    post:
+      summary: Register a new User
+      description: Register a new User in the database
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+
+      responses:
+        201:
+          description: User created succesfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  _id:
+                    type: string
+
+  /user/login:
+    post:
+      summary: Login a User
+      description: Login a User in order to get JWT token (auth-token)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      
+      responses:
+        200:
+          description: User logged in succesfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  data:
+                    type: string
+
+
+  /api/help/getAllHelps:
+    get:
+      summary: Retrieves a list of Helps
+      description: Retrieves a list of  helps JSON objects.
+      security:
+        - ApiKeyAuth: []   
+      responses:
+        200:
+          description: A list of helps JSON objects in an array.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Help"
+
+  /api/help/getHelp/{id}:
+    get:
+      summary: Retrieves one specific Help
+      description: Retrieves one  help JSON objects.
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: MongoDB id
+          schema:
+            type: string   
+      responses:
+        200:
+          description: One help in JSON objects.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Help"
+
+  /api/help/create:
+    post:
+      summary: Create a new Help
+      description: Create a new Help
+      security:
+        - ApiKeyAuth: []      
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Help"
+
+      responses:
+        201:
+          description: Help created succesfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Help"
+  
+  /api/help/update/{id}:
+    patch:
+      summary: Updates a specific Help
+      description: Updates a specific Help based on it id
+      security:
+        - ApiKeyAuth: []     
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: MongoDB id
+          schema:
+            type: string
+      responses:
+        200:
+          description: A help in the format of a JSON object.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Help"
+
+  /api/help/delete/{id}:    
+    delete:
+      summary: Deletes a specific Help
+      description: Deletes a specific Help based on it id
+      security:
+        - ApiKeyAuth: []            
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: MongoDB id
+          schema:
+            type: string      
+
+      responses:
+        201:
+          description: Help deleted succesfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Help"
