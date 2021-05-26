@@ -4,9 +4,9 @@ info:
   description: HELPY_APP API's
   version: 1.0.0
 servers:
-  - url: http://localhost:5000/api/
+  - url: http://localhost:5000/
     description: Localhost development server 
-  - url: https://smsj-men-restapi.herokuapp.com/api/
+  - url: https://helpy-hyf.herokuapp.com/
     description: Heroku remote server
 components:
   securitySchemes:
@@ -125,7 +125,7 @@ paths:
                     type: string
 
 
-  /help/getAllHelps:
+  /api/help/getAllHelps:
     get:
       summary: Retrieves a list of Helps
       description: Retrieves a list of  helps JSON objects.
@@ -141,7 +141,7 @@ paths:
                 items:
                   $ref: "#/components/schemas/Help"
 
-  /help/getHelp/{id}:
+  /api/help/getHelp/{id}:
     get:
       summary: Retrieves one specific Help
       description: Retrieves one  help JSON objects.
@@ -164,7 +164,7 @@ paths:
                 items:
                   $ref: "#/components/schemas/Help"
 
-  /help/create:
+  /api/help/create:
     post:
       summary: Create a new Help
       description: Create a new Help
@@ -185,7 +185,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/Help"
   
-  /help/update/{id}:
+  /api/help/update/{id}:
     patch:
       summary: Updates a specific Help
       description: Updates a specific Help based on it id
@@ -208,7 +208,7 @@ paths:
                 items:
                   $ref: "#/components/schemas/Help"
 
-  /help/delete/{id}:    
+  /api/help/delete/{id}:    
     delete:
       summary: Deletes a specific Help
       description: Deletes a specific Help based on it id
