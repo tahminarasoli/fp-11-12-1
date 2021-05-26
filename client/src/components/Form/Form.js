@@ -128,10 +128,12 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
                         <TextField
                             className={classes.input}
                             name="description"
-                            label="Describe All The Details"
+                            label="Describe details:"
                             variant="outlined"
                             value={cardData.description}
                             fullWidth
+                            multiline
+                            rows={2}
                             changeHandler={changeHandler}
                             onChange={(e) =>
                                 setCardData({
@@ -186,10 +188,12 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
                         <TextField
                             className={classes.input}
                             name="description"
-                            label="Describe All The Details"
+                            label="Describe Details:"
                             variant="outlined"
                             value={cardData.description}
                             fullWidth
+                            multiline
+                            rows={2}
                             changeHandler={changeHandler}
                             onChange={(e) =>
                                 setCardData({

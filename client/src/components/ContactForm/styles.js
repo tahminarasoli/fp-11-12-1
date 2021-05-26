@@ -2,20 +2,21 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
 
-    root: {
-       
-          margin: theme.spacing(1),
-          justifyContent: 'center',
-        
-      },
       paper: {
-          align: 'center',
-         width: '30%',
+        width: '400px',
+        marginTop: theme.spacing(4),
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
         padding: theme.spacing(2),
-        margin: '30px 0',
         background: 'linear-gradient(135deg, #CFE8F7 0%, #BBD2DF 100%)',
         boxShadow: '11px 11px 22px rgba(118, 133, 141, 0.2), -11px -11px 22px rgba(118, 133, 141, 0.2), 11px -11px 22px rgba(255, 255, 255, 0.9), -11px 11px 28px rgba(118, 133, 141, 0.9), inset -1px 1px 2px rgba(255, 255, 255, 0.3), inset 1px -1px 2px rgba(118, 133, 141, 0.5)',
         borderRadius: 30,
+      },
+      large: {
+        width: theme.spacing(9),
+        height: theme.spacing(9),
+        borderRadius: 10,
       },
       input: {
         width: '97%',

@@ -14,7 +14,7 @@ import ContactPhoneIcon from '@material-ui/icons/ContactPhone';
 
 
 import EditIcon from '@material-ui/icons/Edit';
-
+import { Link }  from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteHelp } from '../../../actions/helpsActions'
 import { getHelp } from '../../../actions/helpAction'
@@ -76,6 +76,8 @@ const NeedHelp = ({ help, setCurrentId, }) => {
                 <Fab
                     color='primary'
                     size='small'
+                    component={Link}
+                    to={`/contactPage/${help._id}`}  
                 aria-label="contact" 
                 className={classes.contact1}
                 onClick={handleContact}
