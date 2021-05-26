@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button, Paper, TextField, Typography } from "@material-ui/core";
 import logo1 from "../../images/logo1.png";
 import useStyles from "./styles";
-import axios from 'axios'
+import axios from "axios";
 
-import {getHelp} from '../../actions/helpAction'
-
+import { getHelp } from "../../actions/helpAction";
+import { toSend } from "../../actions/sendAction";
 
 const initialValues = {
     messageTitle: "",
@@ -16,7 +16,7 @@ const initialValues = {
 
 export const ContactForm = () => {
     const classes = useStyles();
-    const {id} = useParams();
+    const { id } = useParams();
 
     const dispatch = useDispatch();
     const token = useSelector((state) => state.token);
@@ -25,21 +25,31 @@ export const ContactForm = () => {
 
     const [cardData, setCardData] = useState(initialValues);
 
-
-
     const changeHandler = (e) => {
         setCardData({ ...cardData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-       console.log(cardData)
-        
+
+        const receiverEmail = help.email;
+        const senderEmail = user.user.email;
+        const title = cardData.messageTitle;
+        const content = cardData.messageContent;
+        const body = {
+            receiverEmail,
+            senderEmail,
+            messageTitle: title,
+            messageContent: content,
+        };
+
+        dispatch(toSend(body));
+
         handleClear();
     };
-    useEffect(()=> {
-        dispatch(getHelp(id, token))
-    },[dispatch, id, token])
+    useEffect(() => {
+        dispatch(getHelp(id, token));
+    }, [dispatch, id, token]);
 
     const handleClear = () => {
         setCardData(initialValues);

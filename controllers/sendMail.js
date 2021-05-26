@@ -30,7 +30,7 @@ const sendEmail = (type, to, content, title, from = SENDER_EMAIL_ADDRESS) => {
         service: 'gmail',
         auth: {
             type: 'OAuth2',
-            user: from,
+            user: SENDER_EMAIL_ADDRESS,
             clientId: MAILING_SERVICE_CLIENT_ID,
             clientSecret: MAILING_SERVICE_CLIENT_SECRET,
             refreshToken: MAILING_SERVICE_REFRESH_TOKEN,

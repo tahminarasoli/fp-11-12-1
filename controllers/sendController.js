@@ -4,6 +4,7 @@ const { OAuth2 } = google.auth;
 
 const sendController = {
     sendMethod: async (req, res) => {
+        // console.log(req.body)
         try {
             const {
                 receiverEmail,
@@ -11,7 +12,7 @@ const sendController = {
                 messageTitle,
                 messageContent
             } = req.body;
-            console.log(receiverEmail, messageContent, messageTitle, senderEmail)
+            // console.log(receiverEmail, messageContent, messageTitle, senderEmail)
             sendMail("contact", receiverEmail, messageContent, messageTitle, senderEmail )
 
             res.json({
