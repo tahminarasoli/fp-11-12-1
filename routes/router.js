@@ -3,6 +3,7 @@ const router = express.Router();
 
 const userRouter = require('./userRouter');
 const uploadRouter = require('./uploadRouter');
+const sendRouter = require('./sendRouter');
 const helpRouter = require('./HelpRouter')
 
 // Only "/api" endpoint
@@ -24,6 +25,13 @@ router.use("/upload_avatar", uploadRouter);
  * @desc route for help
 */
 router.use("/help", helpRouter);
+
+
+/**
+ * @route /api/send
+ * @desc route for send
+*/
+router.use("/send", sendRouter);
 
 
 
