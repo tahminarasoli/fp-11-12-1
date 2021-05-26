@@ -35,7 +35,6 @@ import ContactForm from "./components/ContactForm/ContactForm";
 import Contact from "./components/pages/Contact";
 import About from "./components/pages/About";
 import Services from "./components/pages/Services";
-import Footer from "./components/Footer/Footer";
 
 const App = () => {
 
@@ -80,7 +79,11 @@ const App = () => {
                 <Route path="/" exact component={() => <Redirect to="/helps" />} />
                 <Route path="/helps" exact component={HelpPage} />
                 <Route path="/helps/:id"  component={HelpDetails} />
-                <Route path="/contact"  component={ContactForm} />
+                <Route path="/Contact" exact component={Contact} />
+                <Route path="/contactPage/:id" exact component={ContactForm} />
+                
+                <Route path="/Services" exact component={Services} />
+                <Route path="/About" exact component={About} />
               
                 
                 <Route

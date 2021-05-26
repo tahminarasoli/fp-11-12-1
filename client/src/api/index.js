@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const API = axios.create({ baseURL: "http://localhost:5000" });
-const API = axios.create({ baseURL: "https://helpy-hyf.herokuapp.com" });
+const API = axios.create({ baseURL: "http://localhost:5000" });
+// const API = axios.create({ baseURL: "https://helpy-hyf.herokuapp.com" });
 
 // API.interceptors.request.use((req) => {
 //   if (localStorage.getItem("profile")) {
@@ -32,4 +32,11 @@ export const deleteHelp = (id, token) =>
         headers: { Authorization: token },
     });
 
+    export const sendMail = async (receiverEmail,senderEmail,messageTitle,messageContent) => {
+        const res = await API.post('/api/send/mail', 
+            receiverEmail,senderEmail,messageTitle,messageContent
+        )
+        console.log(res)
+        return res
 
+    }

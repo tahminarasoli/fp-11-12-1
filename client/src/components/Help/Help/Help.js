@@ -75,7 +75,7 @@ const Help = ({ help, setCurrentId, }) => {
                     color='primary'
                     size='small'
                     component={Link}
-                    to="/contact"
+                    to={`/contactPage/${help._id}`}  
                 aria-label="contact" 
                 className={classes.contact}
                 onClick={handleContact}
