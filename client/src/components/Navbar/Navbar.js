@@ -101,7 +101,7 @@ const Navbar = () => {
             <div>
                 <div className={classes.profile}>
                     <Avatar
-                        className={classes.purple}
+                       title={user?.name}
                         src={user?.avatar}
                         alt={user?.name}
                     ></Avatar>
@@ -187,7 +187,9 @@ const Navbar = () => {
                         Log in
                     </Button>
                 )}
-                <IconContext.Provider value={{ color: "#fff" }}>
+                {!isLogged && (
+                    <>
+                    <IconContext.Provider value={{ color: "#fff" }}>
                     <div className="navbar">
                         <Link to="#" className="menu-bars">
                             <FaIcons.FaBars onClick={showSidebar} />
@@ -213,6 +215,8 @@ const Navbar = () => {
                         </ul>
                     </nav>
                 </IconContext.Provider>
+                    </>
+                )}
             </Toolbar>
         </AppBar>
     );
