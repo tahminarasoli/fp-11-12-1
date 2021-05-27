@@ -95,6 +95,8 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
                 {wantsToHelp ? "Desire For Help" : "Reguest For Help"}
             </Typography>
             </div>
+            {!currentId && (
+
             <Button
                 className={classes.switch}
                 fullWidth
@@ -102,16 +104,16 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
                 color="primary"
                 onClick={switchMode}
             >
-                {wantsToHelp ? " I Need a Help?" : "I Want to Help? "}
+                {wantsToHelp ? " I Need a Help" : "I Want to Help "}
             </Button>
-           
+            )}
              
 {wantsToHelp && (
                     <>
                         <TextField
                             className={classes.input}
                             name="helpTitle"
-                            label="How you can help?"
+                            label="Title"
                             variant="outlined"
                             id="name"
                             value={cardData.helpTitle}
@@ -129,7 +131,7 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
                         <TextField
                             className={classes.input}
                             name="description"
-                            label="Describe details:"
+                            label="Describe how you can help?"
                             variant="outlined"
                             value={cardData.description}
                             fullWidth
@@ -173,7 +175,7 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
                         <TextField
                             className={classes.input}
                             name="helpTitle"
-                            label="What do you need?"
+                            label="Title"
                             variant="outlined"
                             id="name"
                             value={cardData.helpTitle}
@@ -191,7 +193,7 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
                         <TextField
                             className={classes.input}
                             name="description"
-                            label="Describe Details:"
+                            label="Describe what do you need?"
                             variant="outlined"
                             value={cardData.description}
                             fullWidth
