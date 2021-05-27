@@ -136,7 +136,7 @@ const Navbar = () => {
                     <StyledMenuItem
                         onClick={handleClose}
                         component={Link}
-                        to="/home"
+                        to="/"
                     >
                         <ListItemTextCustom primary="HOME" />
                     </StyledMenuItem>
