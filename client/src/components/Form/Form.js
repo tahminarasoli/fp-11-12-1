@@ -195,6 +195,7 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
                             multiline
                             rows={2}
                             changeHandler={changeHandler}
+                            inputProps={{ maxLength: 200 }}
                             onChange={(e) =>
                                 setCardData({
                                     ...cardData,

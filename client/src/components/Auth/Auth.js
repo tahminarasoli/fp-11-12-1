@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Paper, Grid, Typography, Container } from "@material-ui/core";
 
-import './auth.css'
+import "./auth.css";
 
 import useStyles from "./styles";
 import logo1 from "../../images/logo1.png";
@@ -9,8 +9,7 @@ import Input from "./Input";
 import { useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { dispatchLogin } from "../../actions/authActions";
-import Footer from '../Footer/Footer';
-
+import Footer from "../Footer/Footer";
 
 import { GoogleLogin } from "react-google-login";
 import FacebookLogin from "react-facebook-login";
@@ -28,6 +27,8 @@ import {
 } from "../../utils/validation/Validation";
 
 import axios from "axios";
+
+import ConfirmModal  from "../../utils/confirmation/ConfirmModal"
 
 const initialState = {
     first: "",
@@ -51,6 +52,7 @@ const Auth = () => {
     const [formData, setFormData] = useState(initialState);
     const dispatch = useDispatch();
     const history = useHistory();
+    const [confirm, setConfirm] = useState();
 
     const googleId = process.env.REACT_APP_GOOGLE_ID;
     const facebookId = process.env.REACT_APP_FACEBOOK_ID;
@@ -128,6 +130,10 @@ const Auth = () => {
                 setFormData({ ...formData, err: "", success: res.data.msg });
 
                 // localStorage.setItem('firstLogin', true);
+                setConfirm({
+                    title: "Registration successful!",
+                    message: "Register Success! Please activate your email to start. "
+                }); 
             } catch (err) {
                 err.response.data.msg &&
                     setFormData({
@@ -216,23 +222,22 @@ const Auth = () => {
     const failureGoogle = (response) => {
         console.log(response);
     };
-    
+
+    const handleConfirm = () => {
+        setConfirm(null);
+        window.location.reload();
+    }
 
     return (
-      
-          <Container component="main" maxWidth="xs">
+        <Container component="main" maxWidth="xs">
             <Paper className={classes.paper} elevation={2}>
-                <img
-                    src={logo1}
-                    alt="logo1"
-                    height="50"
-                />
+                <img src={logo1} alt="logo1" height="50" />
                 <Typography variant="h5">
                     {isRegister ? "Sign Up" : "Log In"}
                 </Typography>
-       <form className={classes.form} onSubmit={handleSubmit}>
-       {err && showErrMsg(err)}
-            {success && showSuccessMsg(success)}
+                <form className={classes.form} onSubmit={handleSubmit}>
+                    {err && showErrMsg(err)}
+                    {success && showSuccessMsg(success)}
                     <Grid container spacing={2}>
                         {isRegister && (
                             <>
@@ -241,12 +246,14 @@ const Auth = () => {
                                     label="First Name"
                                     changeHandler={changeHandler}
                                     half
+                                    required
                                 />
                                 <Input
                                     name="last"
                                     label="Last Name"
                                     changeHandler={changeHandler}
                                     half
+                                    required
                                 />
                             </>
                         )}
@@ -255,6 +262,7 @@ const Auth = () => {
                             label="Email Address"
                             changeHandler={changeHandler}
                             type="email"
+                            required
                         />
                         <Input
                             name="password"
@@ -262,22 +270,25 @@ const Auth = () => {
                             changeHandler={changeHandler}
                             type={showPassword ? "text" : "password"}
                             showPasswordHandler={showPasswordHandler}
+                            required
                         />
+                        {confirm &&  <ConfirmModal title={confirm.title} message={confirm.message} onConfirm={handleConfirm}/>}
                         {isRegister && (
                             <>
                                 <Input
                                     name="confirmPassword"
                                     label="Repeat Password"
                                     changeHandler={changeHandler}
-                                    type="password"
-                                    half
+                                    type={showPassword ? "text" : "password"}
+                                    showPasswordHandler={showPasswordHandler}
+                                    required
                                 />
                                 <Input
                                     name="phone"
                                     label="Phone Number"
                                     changeHandler={changeHandler}
                                     type="phoneNumber"
-                                    half
+                                    required
                                 />
                                 <Input
                                     name="city"
@@ -309,12 +320,14 @@ const Auth = () => {
                                 />
                             </>
                         )}
-                        <Link  to="/forgot_password" 
-                    className={classes.forgot_password}
-                    >Forgot your password?
-                    </Link>
+                        <Link
+                            to="/forgot_password"
+                            className={classes.forgot_password}
+                        >
+                            Forgot your password?
+                        </Link>
                     </Grid>
-                    <Button 
+                    <Button
                         type="submit"
                         fullWidth
                         variant="contained"
@@ -323,7 +336,7 @@ const Auth = () => {
                     >
                         {isRegister ? "Register" : "Log In"}
                     </Button>
-                    
+
                     <Grid container justify="center">
                         <Button
                             className={classes.switch}
@@ -338,8 +351,7 @@ const Auth = () => {
                         </Button>
                         <div className="social">
                             <GoogleLogin
-                           
-                             clientId={googleId}
+                                clientId={googleId}
                                 buttonText="Login with Google"
                                 onSuccess={responseGoogle}
                                 onFailure={failureGoogle}
@@ -355,10 +367,7 @@ const Auth = () => {
                     </Grid>
                 </form>
             </Paper>
-           </Container>
-         
-                            
-                                    
+        </Container>
     );
 };
 

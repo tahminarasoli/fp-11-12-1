@@ -76,7 +76,7 @@ const App = () => {
             <Switch>
                 <Route path="/"     exact component={Home} />
                 <Route path="/auth" exact component={Auth} />
-                <Route path="/" exact component={() => <Redirect to="/helps" />} />
+                {/* <Route path="/" exact component={() => <Redirect to="/helps" />} /> */}
                 <Route path="/helps" exact component={HelpPage} />
                 <Route path="/helps/:id"  component={HelpDetails} />
                 <Route path="/Contact" exact component={Contact} />
