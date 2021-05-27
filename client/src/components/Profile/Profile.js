@@ -145,10 +145,10 @@ const Profile = () => {
                     headers: { Authorization: token },
                 }
             );
-            
+
             setData({ ...data, err: "", success: res.data.msg });
         } catch (err) {
-            console.log(err)
+            console.log(err);
             err.response?.data?.msg &&
                 setData({ ...data, err: err.response?.data?.msg, success: "" });
         }
@@ -185,7 +185,8 @@ const Profile = () => {
     };
 
     const handleUpdate = () => {
-        if (name || avatar || phone || city || zipCode || streetName || box) updateInfor();
+        if (name || avatar || phone || city || zipCode || streetName || box)
+            updateInfor();
         if (password) updatePassword();
     };
 
@@ -215,147 +216,139 @@ const Profile = () => {
     return (
         <>
             <div>
-            {err && showErrMsg(err)}
+                {err && showErrMsg(err)}
                 {success && showSuccessMsg(success)}
-               {loading && <h3>Loading......</h3>}
+                {loading && <h3>Loading......</h3>}
             </div>
             <div className="profile_page">
                 <div className="col-left">
-                <Container component="main" maxWidth="xs">
-            <Paper className={classes.paper} elevation={2}>
-                <img
-                    src={logo1}
-                    alt="logo1"
-                    height="50"
-                />
-                    <Typography variant="h5">
-                        {isAdmin ? "Admin Profile" : "User Profile"}
-                        </Typography>
-                        <form 
-                        className={classes.form}
-                        
-                        >
-                        <div className="avatar">
-                        <img src={avatar ? avatar : user.avatar} alt="" />
-                        <span>
-                            <i className="fas fa-camera"></i>
-                            <p>Change</p>
-                            <input
-                                type="file"
-                                name="file"
-                                id="file_up"
-                                onChange={handleChangeAvatar}
-                            />
-                        </span>
-                    </div>
-               
-                <Grid container spacing={2}>
-                        <Input
-                            label="Name"
-                            type="text"
-                            handleChangeInput={handleChangeInput}
-                            id="name"
-                            defaultValue={user?.name}
-                            name="name"
-                            half
-                            
-                          />
-                        <Input
-                            label="Email Address"
-                            type="text"
-                             id="email"
-                            defaultValue={user?.email}
-                            name="email"
-                            disabled
-                            half
-                        />
-                    <Input
-                            label="New Password"
-                            type="password"
-                          
-                            id="password"
-                            defaultValue={password}
-                            name="password"
-                            handleChangeInput={handleChangeInput}
-                            half
-                        />
-                
-                    <Input
-                            type="password"
-                            label="Confirm Password"
-                            id="cf_password"
-                            defaultValue={cf_password}
-                            name="cf_password"
-                            handleChangeInput={handleChangeInput}
-                           half
-                        />
+                    <Container component="main" maxWidth="xs">
+                        <Paper className={classes.paper} elevation={2}>
+                            <img src={logo1} alt="logo1" height="50" />
+                            <Typography variant="h5">
+                                {isAdmin ? "Admin Profile" : "User Profile"}
+                            </Typography>
+                            <form className={classes.form}>
+                                <div className="avatar">
+                                    <img
+                                        className="avatarImg"
+                                        src={avatar ? avatar : user.avatar}
+                                        alt=""
+                                    />
+                                    <span>
+                                        <i className="fas fa-camera fa-2x"></i>
+                                        <p>Change</p>
+                                        <input
+                                            type="file"
+                                            name="file"
+                                            id="file_up"
+                                            onChange={handleChangeAvatar}
+                                        />
+                                    </span>
+                                </div>
 
-                    <Input 
-                            label="Phone Number"
-                            type="text"
-                            handleChangeInput={handleChangeInput}
-                            id="phone"
-                            defaultValue={user?.phone}
-                            name="phone"
-                        
-                        />
-                 
-                    <Input
-                            type="text"
-                            label="City"
-                            id="city"
-                            defaultValue={user?.address?.city}
-                            name="city"
-                            handleChangeInput={handleChangeInput}
-                            half
-                        />
-                    <Input
-                           label="Street Name"
-                            type="text"
-                            half
-                            id="streetName"
-                            defaultValue={user?.address?.streetName}
-                            name="streetName"
-                            handleChangeInput={handleChangeInput}
-                        />
-                 
-                    <Input 
-                            type="text"
-                            label="Box Number"
-                            id="box"
-                            defaultValue={user?.address?.box}
-                            name="box"
-                            handleChangeInput={handleChangeInput}
-                            half
-                        />
-                 
-                    <Input
-                            label="Zip Code"
-                            type="text"
-                            half
-                            id="zipCode"
-                            defaultValue={user?.address?.zipCode}
-                            name="zipCode"
-                            handleChangeInput={handleChangeInput}
-                        />
-                      <em style={{ color: "crimson" }}>
-                            * If you update your password here, you will not be
-                            able to login using google and facebook.
-                        </em>
-                   
-                     </Grid>
-                    <Button 
-                     
-                     fullWidth
-                     variant="contained"
-                     color="primary"
-                     className={classes.submit}
-                    disabled={loading} 
-                    onClick={handleUpdate}>
-                        Update
-                    </Button>
-                    </form>
-                    </Paper>
+                                <Grid container spacing={2}>
+                                    <Input
+                                        label="Name"
+                                        type="text"
+                                        handleChangeInput={handleChangeInput}
+                                        id="name"
+                                        defaultValue={user?.name}
+                                        name="name"
+                                    />
+                                    <Input
+                                        label="Email Address"
+                                        type="text"
+                                        id="email"
+                                        defaultValue={user?.email}
+                                        name="email"
+                                        disabled
+                                    />
+                                    <Input
+                                        label="New Password"
+                                        type="password"
+                                        id="password"
+                                        defaultValue={password}
+                                        name="password"
+                                        handleChangeInput={handleChangeInput}
+                                        half
+                                    />
+
+                                    <Input
+                                        type="password"
+                                        label="Confirm Password"
+                                        id="cf_password"
+                                        defaultValue={cf_password}
+                                        name="cf_password"
+                                        handleChangeInput={handleChangeInput}
+                                        half
+                                    />
+
+                                    <Input
+                                        label="Phone Number"
+                                        type="text"
+                                        handleChangeInput={handleChangeInput}
+                                        id="phone"
+                                        defaultValue={user?.phone}
+                                        name="phone"
+                                    />
+
+                                    <Input
+                                        type="text"
+                                        label="City"
+                                        id="city"
+                                        defaultValue={user?.address?.city}
+                                        name="city"
+                                        handleChangeInput={handleChangeInput}
+                                        half
+                                    />
+                                    <Input
+                                        label="Street Name"
+                                        type="text"
+                                        half
+                                        id="streetName"
+                                        defaultValue={user?.address?.streetName}
+                                        name="streetName"
+                                        handleChangeInput={handleChangeInput}
+                                    />
+
+                                    <Input
+                                        type="text"
+                                        label="Box Number"
+                                        id="box"
+                                        defaultValue={user?.address?.box}
+                                        name="box"
+                                        handleChangeInput={handleChangeInput}
+                                        half
+                                    />
+
+                                    <Input
+                                        label="Zip Code"
+                                        type="text"
+                                        half
+                                        id="zipCode"
+                                        defaultValue={user?.address?.zipCode}
+                                        name="zipCode"
+                                        handleChangeInput={handleChangeInput}
+                                    />
+                                    <em style={{ color: "crimson" }}>
+                                        * If you update your password here, you
+                                        will not be able to login using google
+                                        and facebook.
+                                    </em>
+                                </Grid>
+                                <Button
+                                    fullWidth
+                                    variant="contained"
+                                    color="primary"
+                                    className={classes.submit}
+                                    disabled={loading}
+                                    onClick={handleUpdate}
+                                >
+                                    Update
+                                </Button>
+                            </form>
+                        </Paper>
                     </Container>
                 </div>
 
