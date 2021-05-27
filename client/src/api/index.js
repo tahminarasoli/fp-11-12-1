@@ -15,7 +15,7 @@ export const fetchHelps = (token) =>
     API.get("/api/help/getAllHelps", {
         headers: { Authorization: token },
     });
-export const fetchHelp = (id,token) =>
+export const fetchHelp = (id, token) =>
     API.get(`/api/help/getHelp/${id}`, {
         headers: { Authorization: token },
     });
@@ -32,7 +32,31 @@ export const deleteHelp = (id, token) =>
         headers: { Authorization: token },
     });
 
-export const sendMail = (receiverEmail, messageContent, messageTitle, senderEmail) =>
-    API.post("/api/send/mail", receiverEmail, messageContent, messageTitle, senderEmail, {
-        
-    });
+export const sendMail = (
+    receiverEmail,
+    messageContent,
+    messageTitle,
+    senderEmail
+) =>
+    API.post(
+        "/api/send/mail",
+        receiverEmail,
+        messageContent,
+        messageTitle,
+        senderEmail,
+        {}
+    );
+export const sendMailContact = (
+    receiverEmail,
+    messageContent,
+    messageTitle,
+    senderEmail
+) =>
+    API.post(
+        "/api/send/mailForContact",
+        receiverEmail,
+        messageContent,
+        messageTitle,
+        senderEmail,
+        {}
+    );

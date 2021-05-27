@@ -13,4 +13,11 @@ const auth = require("../middleware/auth.js");
 */
 router.post("/mail", sendController.sendMethod);
 
+/** 
+ * @route POST /api/send/mailForContact
+ * @desc SendContactMail endpoint
+ * @access Public
+*/
+router.post("/mailForContact", sendController.sendMethodForContact);
+
 module.exports = router;

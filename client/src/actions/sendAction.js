@@ -12,4 +12,13 @@ export const toSend = (receiverEmail, messageContent, messageTitle, senderEmail)
   }
 };
 
+export const toSendContact = (receiverEmail, messageContent, messageTitle, senderEmail) => async (dispatch) => {
+  try {
+    const { data } = await api.sendMailContact(receiverEmail, messageContent, messageTitle, senderEmail);
+    
+   console.log(data)
+  } catch (error) {
+    console.log(error);
+  }
+};
 

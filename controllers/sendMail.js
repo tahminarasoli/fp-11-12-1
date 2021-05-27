@@ -85,6 +85,33 @@ const sendEmail = (type, to, content, title, from = SENDER_EMAIL_ADDRESS) => {
             `
         }         
     }
+    if(type === "contactToAdmin"){
+        mailOptions = {
+            from: from,
+            to: to,
+            subject: "HELPY_APP",
+            html: `
+                <div style="max-width: 700px; margin:auto; border: 10px solid #ddd; padding: 50px 20px; font-size: 110%;">
+                <h2 style="text-align: center; text-transform: uppercase;color: teal;">our Helpy.</h2>
+                <p> Sender Name: 
+            
+                ${title}
+                </p>
+                
+                <div>
+                <p> Sender Email Address: </p>
+                <p> 
+                ${from}
+                </p>
+                </div>
+                <p> 
+                Message From Sender :
+                </p>
+                <div>${content}</div>
+                </div>
+            `
+        }         
+    }
     
     // console.log(mailOptions)
     smtpTransport.sendMail(mailOptions, (err, infor) => {
