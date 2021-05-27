@@ -7,7 +7,9 @@ import {
     Typography,
     Menu,
     MenuItem,
-    MenuList,
+    withStyles,
+    ListItemText,
+ 
 } from "@material-ui/core";
 import Fade from '@material-ui/core/Fade';
 
@@ -101,7 +103,7 @@ const Navbar = () => {
             <div>
                 <div className={classes.profile}>
                     <Avatar
-                       title={user?.name}
+                        className={classes.purple}
                         src={user?.avatar}
                         alt={user?.name}
                     >
