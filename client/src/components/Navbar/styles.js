@@ -34,11 +34,13 @@ export default makeStyles((theme) => ({
     display: "flex",
     justifyContent: "flex-end",
     width: "400px",
+    position:"relative"
   },
   profile: {
     display: "flex",
     justifyContent: "space-between",
-    width: "400px",
+    alignItems: "center",
+    width: "300px",
   },
   userName: {
     display: "flex",
@@ -50,7 +52,8 @@ export default makeStyles((theme) => ({
   },
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
-    backgroundColor: deepPurple[500],
+    backgroundColor: "red",
+
   },
   profile_button: {
     width: "220px",

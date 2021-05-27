@@ -10,33 +10,35 @@
   margin-left: 2rem;
   font-size: 2rem;
   background: none;
+  display: flex;
+  align-self: center;
 }
 
 .nav-menu {
+  display: none;
+}
+
+.nav-menu.active {
   background-color: #C5DDEB;
   width: 250px;
   height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  top: 0;
-  right: -100%;
+  position: absolute;
+  top: 100px;
+  right: -50px;
   transition: 850ms;
-}
-
-.nav-menu.active {
- right:  0;
-  transition: 350ms;
 }
 
 .nav-text {
   display: flex;
   justify-content: start;
   align-items: center;
-  padding: 8px 0px 8px 16px;
+  padding: 8px 0px 8px 8px;
   list-style: none;
   height: 60px;
+  margin-top: -10px;
 }
 
 .nav-text a {
@@ -47,7 +49,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 0 16px;
+  
   border-radius: 4px;
 }
 
@@ -71,3 +73,4 @@
 span {
   margin-left: 16px;
 }
+

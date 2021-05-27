@@ -50,6 +50,7 @@ export const ContactForm = () => {
         dispatch(toSend(body));
 
         handleClear();
+           
     };
     useEffect(() => {
         dispatch(getHelp(id, token));
@@ -61,6 +62,7 @@ export const ContactForm = () => {
 
     const handleConfirm = () => {
         setConfirm(null);
+        window.location.href = "/helps";
     }
 
     return (

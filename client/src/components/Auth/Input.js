@@ -6,7 +6,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 
- const Input = ( { name, changeHandler,label, half, autoFocus, type, showPasswordHandler,  }) => {
+ const Input = ( { name, changeHandler,label, half, autoFocus, type, showPasswordHandler,required  }) => {
     const classes = useStyles();
     return (
   <Grid item xs={12} sm={half ? 6 : 12}>
@@ -15,12 +15,12 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
             name={name}
             onChange={changeHandler}
             variant="outlined"
-            required
+            required={required}
             fullWidth
             label={label}
             autoFocus={autoFocus}
             type={type}
-            InputProps={name === 'password' ? {
+            InputProps={name === 'password' || name === "confirmPassword" ? {
                 endAdornment: (
                     <InputAdornment position='end'>
                         <IconButton onClick={showPasswordHandler}>
