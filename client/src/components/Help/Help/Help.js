@@ -83,7 +83,7 @@ const Help = ({ help, setCurrentId }) => {
         >
             <IconButton
             style={{color:'grey'}}
-            size="smal"
+            size="small"
             component={Link}
             to={`/contactPage/${help._id}`}
              >
