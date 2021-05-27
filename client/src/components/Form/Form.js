@@ -116,6 +116,7 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
                             id="name"
                             value={cardData.helpTitle}
                             fullWidth
+                            inputProps={{ maxLength: 13 }}
                             changeHandler={changeHandler}
                             onChange={(e) =>
                                 setCardData({
@@ -134,6 +135,7 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
                             fullWidth
                             multiline
                             rows={2}
+                            inputProps={{ maxLength: 200 }}
                             changeHandler={changeHandler}
                             onChange={(e) =>
                                 setCardData({
@@ -176,6 +178,7 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
                             id="name"
                             value={cardData.helpTitle}
                             fullWidth
+                            inputProps={{ maxLength: 13 }}
                             changeHandler={changeHandler}
                             onChange={(e) =>
                                 setCardData({
