@@ -7,20 +7,21 @@ import {
     Typography,
     Menu,
     MenuItem,
+    MenuList,
 } from "@material-ui/core";
-import Fade from "@material-ui/core/Fade";
-import { IconContext } from "react-icons";
+import Fade from '@material-ui/core/Fade';
+
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
 import useStyles from "./styles";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import { IconContext } from "react-icons";
+import { SidebarData } from "./SidebarData";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-import { SidebarData } from "./SidebarData";
 import "./Navbar.css";
-import { withStyles } from "@material-ui/core/styles";
-import ListItemText from "@material-ui/core/ListItemText";
+
 
 const StyledMenu = withStyles({
     paper: {
@@ -74,15 +75,14 @@ const Navbar = () => {
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
-
     const [sidebar, setSidebar] = useState(false);
 
-    const showSidebar = () => setSidebar(!sidebar);
+  const showSidebar = () => setSidebar(!sidebar);
 
-    const handleClose = () => {
+  const handleClose = () => {
         setAnchorEl(null);
     };
-    const handleProfile = () => {
+  const handleProfile = () => {
         handleClose();
     };
     const handleLogout = async () => {
@@ -104,10 +104,11 @@ const Navbar = () => {
                        title={user?.name}
                         src={user?.avatar}
                         alt={user?.name}
-                    ></Avatar>
-                    <Button
+                    >
+                    </Avatar>
+                    <Button 
                         className={classes.profile_button}
-                        aria-controls="fade-menu"
+                        aria-controls="fade-menu" 
                         aria-haspopup="true"
                         onClick={handleClick}
                     >
@@ -117,7 +118,7 @@ const Navbar = () => {
                                 : `${user?.name}`
                             : null}
                     </Button>
-                </div>
+              </div>
                 <StyledMenu
                     id="fade-menu"
                     anchorEl={anchorEl}
@@ -162,12 +163,14 @@ const Navbar = () => {
     return (
         <AppBar className={classes.appBar} position="static">
             <div className={classes.brandContainer}>
-                <img className={classes.image} src={logo} alt="logo" />
+                <Link to="/">
+                    <img className={classes.image} src={logo} alt="logo" />
+                </Link>
                 <Typography
                     component={Link}
                     to="/"
                     className={classes.heading}
-                    variant="h2"
+                    variant="h3"
                 >
                     We help with shopping{" "}
                 </Typography>
@@ -176,6 +179,7 @@ const Navbar = () => {
                 {isLogged ? (
                     userLink()
                 ) : (
+                   
                     <Button
                         component={Link}
                         to="/auth"
@@ -185,6 +189,7 @@ const Navbar = () => {
                         color="primary"
                     >
                         Log in
+
                     </Button>
                 )}
                 {!isLogged && (
@@ -220,6 +225,7 @@ const Navbar = () => {
             </Toolbar>
         </AppBar>
     );
+
 };
 
 export default Navbar;
