@@ -22,6 +22,45 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import "./Navbar.css";
 
+
+const StyledMenu = withStyles({
+    paper: {
+        border: "1px solid #d3d4d5",
+        padding: "5px",
+        backgroundColor: "rgba(243, 161, 176, 0.8)",
+    },
+})((props) => (
+    <Menu
+        elevation={0}
+        getContentAnchorEl={null}
+        anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "center",
+        }}
+        transformOrigin={{
+            vertical: "top",
+            horizontal: "center",
+        }}
+        {...props}
+    />
+));
+
+const StyledMenuItem = withStyles((theme) => ({
+    root: {
+        margin: "auto",
+        width: "150px",
+    },
+}))(MenuItem);
+
+const ListItemTextCustom = withStyles((theme) => ({
+    primary: {
+        textAlign: "center",
+        color: "white",
+        fontWeight: "700",
+        margin: "auto",
+    },
+}))(ListItemText);
+
 const Navbar = () => {
     const classes = useStyles();
 
@@ -62,7 +101,7 @@ const Navbar = () => {
             <div>
                 <div className={classes.profile}>
                     <Avatar
-                        className={classes.purple}
+                       title={user?.name}
                         src={user?.avatar}
                         alt={user?.name}
                     >
@@ -79,36 +118,44 @@ const Navbar = () => {
                                 : `${user?.name}`
                             : null}
                     </Button>
-                </div>
-                <Menu
-                   id="fade-menu"
-                   anchorEl={anchorEl}
-                   keepMounted
-                   style = {window.matchMedia("(max-width: 700px)").matches ? {position: "absolute", top: "70px", height: "800px", width: "60vw", right: "900px"} : {position: "absolute", top: "120px", height: "1000px", width: "30vw"}}
-                   open={open}
-                   onClose={handleClose}
-                   TransitionComponent={Fade}
-                >    
-                   <MenuList className = {classes.menu}>
-                    <MenuItem
+              </div>
+                <StyledMenu
+                    id="fade-menu"
+                    anchorEl={anchorEl}
+                    keepMounted
+                    open={open}
+                    onClose={handleClose}
+                    TransitionComponent={Fade}
+                >
+                    <StyledMenuItem
                         onClick={handleProfile}
-                            component={Link}
-                            to="/profile"
-                            className = {classes.menuItem}
-                        >
-                            Profile
-                            </MenuItem>
-
-                            <MenuItem 
-                        onClick={handleClose} component={Link} to="/help" className = {classes.menuItem}>
-                                Help
-                            </MenuItem>
-                            <MenuItem 
-                        onClick={handleLogout} component={Link} to="/" className = {classes.menuItem}>
-                                Logout
-                        </MenuItem>
-                   </MenuList>
-                </Menu>
+                        component={Link}
+                        to="/profile"
+                    >
+                        <ListItemTextCustom primary="PROFILE" />
+                    </StyledMenuItem>
+                    <StyledMenuItem
+                        onClick={handleClose}
+                        component={Link}
+                        to="/"
+                    >
+                        <ListItemTextCustom primary="HOME" />
+                    </StyledMenuItem>
+                    <StyledMenuItem
+                        onClick={handleClose}
+                        component={Link}
+                        to="/helps"
+                    >
+                        <ListItemTextCustom primary="HELPS" />
+                    </StyledMenuItem>
+                    <StyledMenuItem
+                        onClick={handleLogout}
+                        component={Link}
+                        to="/"
+                    >
+                        <ListItemTextCustom primary="LOGOUT" />
+                    </StyledMenuItem>
+                </StyledMenu>
             </div>
         );
     };
@@ -142,37 +189,43 @@ const Navbar = () => {
                         color="primary"
                     >
                         Log in
-                        </Button>
-        )}
-        <IconContext.Provider value={{ color: "#fff" }}>
-          <div className="navbar">
-            <Link to="#" className="menu-bars">
-              <FaIcons.FaBars onClick={showSidebar} />
-            </Link>
-          </div>
-          <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
-            <ul className="nav-menu-items" onClick={showSidebar}>
-              <li className="navbar-toggle">
-                <Link to="#" className="menu-bars">
-                  <AiIcons.AiOutlineClose />
-                </Link>
-              </li>
-              {SidebarData.map((item, index) => {
-                return (
-                  <li key={index} className={item.cName}>
-                    <Link to={item.path}>
-                      {item.icon}
-                      <span>{item.title}</span>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-        </IconContext.Provider>
-      </Toolbar>
-    </AppBar>
-  );
+
+                    </Button>
+                )}
+                {!isLogged && (
+                    <>
+                    <IconContext.Provider value={{ color: "#fff" }}>
+                    <div className="navbar">
+                        <Link to="#" className="menu-bars">
+                            <FaIcons.FaBars onClick={showSidebar} />
+                        </Link>
+                    </div>
+                    <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+                        <ul className="nav-menu-items" onClick={showSidebar}>
+                            <li className="navbar-toggle">
+                                <Link to="#" className="menu-bars">
+                                    <AiIcons.AiOutlineClose />
+                                </Link>
+                            </li>
+                            {SidebarData.map((item, index) => {
+                                return (
+                                    <li key={index} className={item.cName}>
+                                        <Link to={item.path}>
+                                            {item.icon}
+                                            <span>{item.title}</span>
+                                        </Link>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </nav>
+                </IconContext.Provider>
+                    </>
+                )}
+            </Toolbar>
+        </AppBar>
+    );
+
 };
 
 export default Navbar;
