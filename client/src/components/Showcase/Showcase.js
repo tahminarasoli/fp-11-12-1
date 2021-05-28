@@ -24,7 +24,7 @@ const Showcase = () => {
         url="https://youtu.be/o9NAY3BrV7o"
 
         width = "100%"
-        width = "300px"
+        height = "300px"
 
       
 />
