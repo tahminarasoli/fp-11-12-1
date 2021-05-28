@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Home from "./components/Home/Home";
 
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 
 import "./App.css";
@@ -75,12 +75,12 @@ const App = () => {
             <Navbar />
             <Switch>
                 <Route path="/"     exact component={Home} />
-                <Route path="/auth" exact component={Auth} />
+                <Route path="/auth" exact component={isLogged ? NotFound : Auth} />
                 {/* <Route path="/" exact component={() => <Redirect to="/helps" />} /> */}
-                <Route path="/helps" exact component={HelpPage} />
-                <Route path="/helps/:id"  component={HelpDetails} />
+                <Route path="/helps" exact component={!isLogged ? NotFound : HelpPage} />
+                <Route path="/helps/:id"  component={!isLogged ? NotFound : HelpDetails} />
                 <Route path="/Contact" exact component={Contact} />
-                <Route path="/contactPage/:id" exact component={ContactForm} />
+                <Route path="/contactPage/:id" exact component={!isLogged ? NotFound : ContactForm} />
                 
                 <Route path="/Services" exact component={Services} />
                 <Route path="/About" exact component={About} />

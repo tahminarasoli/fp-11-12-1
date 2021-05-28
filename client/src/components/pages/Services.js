@@ -4,6 +4,7 @@ import useStyles from './styles';
 
 
 function Services() {
+
   const classes = useStyles();
   return (
   
@@ -39,6 +40,7 @@ function Services() {
       </Container>
     </div>
   );
+
 }
 
 export default Services;

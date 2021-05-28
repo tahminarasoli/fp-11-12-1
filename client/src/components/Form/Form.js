@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, Paper, TextField, Typography } from "@material-ui/core";
 import logo1 from "../../images/logo1.png";
@@ -6,20 +6,25 @@ import useStyles from "./styles";
 import ConfirmModal from "../../utils/confirmation/ConfirmModal";
 import { createHelp, updateHelp } from "../../actions/helpsActions";
 
+
 const initialValues = {
     helpTitle: "",
     description: "",
     availableSlot: "2021-05-24T17:30",
 };
 
-export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
+export const Form = ({
+    wantsToHelp,
+    setWantsToHelp,
+    currentId,
+    setCurrentId,
+}) => {
     const classes = useStyles();
-
     const dispatch = useDispatch();
     const token = useSelector((state) => state.token);
     const help = useSelector((state) => state.help);
     const [confirm, setConfirm] = useState();
-
+    // console.log(help)
     const [cardData, setCardData] = useState(initialValues);
 
     const changeHandler = (e) => {
@@ -32,23 +37,23 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
         if (currentId) {
             setConfirm({
                 title: "Your help is updated!",
-                message: "Our users will contact you soon."
-            }); 
+                message: "Our users will contact you soon.",
+            });
             dispatch(
                 updateHelp(
                     currentId,
                     {
                         ...cardData,
-                        wantsToHelp,
                     },
                     token
                 )
             );
+            setCurrentId(false);
         } else {
             setConfirm({
                 title: "Your help is created!",
-                message: "Our users will contact you soon. "
-            }); 
+                message: "Our users will contact you soon. ",
+            });
             dispatch(
                 createHelp(
                     {
@@ -72,43 +77,55 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
 
     const handleConfirm = () => {
         setConfirm(null);
-    }
+    };
 
+    useEffect(() => {
+       if(currentId){
+        console.log('current id var')
+        setCardData({ ...cardData, helpTitle: help.helpTitle,
+        description: help.description });
+    }
+    },[currentId, help])
+    
+    
+    
     return (
         <Paper className={classes.paper} elevation={6}>
-             <form 
-             autoComplete="off" 
-             noValidate className={`${classes.root} ${classes.form}`}  
-             onSubmit={handleSubmit}
-             >
-        {confirm &&  <ConfirmModal title={confirm.title} message={confirm.message} onConfirm={handleConfirm}/>}
-        <div align='center'>
-            <img 
-            src={logo1} 
-            alt="logo1" 
-            height="50" 
-            />
-            <Typography  variant="h5">
-                {currentId ? "Update" : "Create"}
-            </Typography>
-            <Typography variant="h5">
-                {wantsToHelp ? "Desire For Help" : "Reguest For Help"}
-            </Typography>
-            </div>
-            {!currentId && (
-
-            <Button
-                className={classes.switch}
-                fullWidth
-                variant="contained"
-                color="primary"
-                onClick={switchMode}
+            <form
+                autoComplete="off"
+                noValidate
+                className={`${classes.root} ${classes.form}`}
+                onSubmit={handleSubmit}
             >
-                {wantsToHelp ? " I Need a Help" : "I Want to Help "}
-            </Button>
-            )}
-             
-{wantsToHelp && (
+                {confirm && (
+                    <ConfirmModal
+                        title={confirm.title}
+                        message={confirm.message}
+                        onConfirm={handleConfirm}
+                    />
+                )}
+                <div align="center">
+                    <img src={logo1} alt="logo1" height="50" />
+                    <Typography variant="h5">
+                        {currentId ? "Update" : "Create"}
+                    </Typography>
+                    <Typography variant="h5">
+                        {wantsToHelp ? "Desire For Help" : "Reguest For Help"}
+                    </Typography>
+                </div>
+                {!currentId && (
+                    <Button
+                        className={classes.switch}
+                        fullWidth
+                        variant="contained"
+                        color="primary"
+                        onClick={switchMode}
+                    >
+                        {wantsToHelp ? " I Need a Help" : "I Want to Help "}
+                    </Button>
+                )}
+
+                {wantsToHelp && (
                     <>
                         <TextField
                             className={classes.input}
@@ -156,7 +173,7 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
                             variant="outlined"
                             defaultValue="2021-05-24T17:30"
                             fullWidth
-                            className={classes.textField}
+                            // className={classes.textField}
                             changeHandler={changeHandler}
                             onChange={(e) =>
                                 setCardData({
@@ -218,7 +235,7 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
                             variant="outlined"
                             defaultValue="2021-05-24T17:30"
                             fullWidth
-                            className={classes.textField}
+                            // className={classes.textField}
                             changeHandler={changeHandler}
                             onChange={(e) =>
                                 setCardData({
@@ -247,7 +264,6 @@ export const Form = ({ wantsToHelp, setWantsToHelp, currentId }) => {
                     color="#5B5B61"
                     onClick={handleClear}
                     fullWidth
-                    
                 >
                     Clear
                 </Button>

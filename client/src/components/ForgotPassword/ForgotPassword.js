@@ -10,7 +10,7 @@ import {
 } from "../../utils/notification/Notification";
 
 import { isEmail } from "../../utils/validation/Validation";
-import { Button, Container, Input, Paper, TextField, Typography } from "@material-ui/core";
+import { Button, Container, Paper, TextField, Typography } from "@material-ui/core";
 
 const initialState = {
     email: "",

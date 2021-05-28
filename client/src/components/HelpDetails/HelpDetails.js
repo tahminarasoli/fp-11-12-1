@@ -1,7 +1,7 @@
 import React from 'react'
 
 const HelpDetails = () => {
-    console.log('HELP DETAILS');
+    // console.log('HELP DETAILS');
     return (
         <div>
             HELP DETAILS

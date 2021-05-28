@@ -65,11 +65,10 @@ const ListItemTextCustom = withStyles((theme) => ({
 
 const Navbar = () => {
     const classes = useStyles();
-
     const auth = useSelector((state) => state.auth);
 
     const { user, isLogged } = auth;
-    console.log(user);
+    // console.log(user);
 
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);

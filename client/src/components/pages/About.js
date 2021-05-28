@@ -5,6 +5,7 @@ import {Container,  Typography, Grid } from '@material-ui/core';
 import useStyles from './styles';
 
 function About() {
+
   const classes = useStyles();
   return (
     <div>
@@ -33,6 +34,7 @@ function About() {
       
     </div>
   );
+   
 }
 
 export default About;

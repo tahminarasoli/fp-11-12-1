@@ -8,13 +8,18 @@ import { isEmail } from "../../utils/validation/Validation";
 import ConfirmModal from "../../utils/confirmation/ConfirmModal";
 import ErrorModal from "../../utils/error/ErrorModal"
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { toSendContact } from "../../actions/sendAction";
 
     const Contact = () => {
     const classes = useStyles();
     const [confirm, setConfirm] = useState();
     const dispatch = useDispatch();
+
     const [ error, setError] = useState();
+
+
+    const history = useHistory();
 
     const [data, setData] = useState({
         fullName: "",
@@ -94,7 +99,11 @@ import { toSendContact } from "../../actions/sendAction";
 
     const handleConfirm = () => {
         setConfirm(null);
+
         window.location.href = "/";
+
+
+        history.push("/");
 
     };
     const handleError = () => {
