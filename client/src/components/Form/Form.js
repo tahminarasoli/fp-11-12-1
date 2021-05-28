@@ -110,7 +110,7 @@ export const Form = ({
                         {currentId ? "Update" : "Create"}
                     </Typography>
                     <Typography variant="h5">
-                        {wantsToHelp ? "Desire For Help" : "Reguest For Help"}
+                        {wantsToHelp ? "Desire For Help" : "Request For Help"}
                     </Typography>
                 </div>
                 {!currentId && (

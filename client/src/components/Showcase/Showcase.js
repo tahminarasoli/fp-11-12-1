@@ -22,7 +22,7 @@ const Showcase = () => {
         <ReactPlayer
         className ={classes.reactplayer}
         url="https://youtu.be/o9NAY3BrV7o"
-        width = "400px"
+        width = "100%"
         height = "300px"
         align='center'
       
@@ -46,9 +46,9 @@ const Showcase = () => {
         <Grid/>
           <Grid container  alignItems="row" spacing={3} className={classes.grid} >
           <Grid item  xs={12}
-                                sm={12}
-                                md={6}
-                                lg={3}>
+                      sm={12}
+                      md={6}
+                      lg={3}>
               <Paper className={classes.paper}>
                 <Typography className={classes.title} variant='h4'>Shop for you</Typography>
                   <Typography variant='h6' className={classes.paragraph1} > If getting around the shop  becoming hard for you do not feel burdensome to ask for help. 
