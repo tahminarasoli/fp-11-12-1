@@ -25,7 +25,7 @@ const Showcase = () => {
         width = "400px"
         height = "300px"
         align='center'
-        style = {window.matchMedia("(max-width: 700px)").matches? {width: "200px", height: "200px", margin: "20px auto"}: {width: "300px", height: "300px", margin: "20px auto"}}
+      
 />
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={6} >

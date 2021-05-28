@@ -306,7 +306,7 @@ const Auth = () => {
                                 />
                                 <Input
                                     name="streetName"
-                                    label="Street Name"
+                                    label="Street and Namber"
                                     changeHandler={changeHandler}
                                     type="streetName"
                                     half
