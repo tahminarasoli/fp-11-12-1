@@ -16,7 +16,7 @@ const Helps = ({ setCurrentId, wantsToHelp }) => {
 
     useEffect(() => {
         dispatch(getHelps(token));
-    }, [dispatch]);
+    }, [dispatch,token]);
 
     // console.log(helps);
 
