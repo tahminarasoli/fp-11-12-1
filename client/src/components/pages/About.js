@@ -1,5 +1,5 @@
 import React from "react";
-import home2 from '../../images/home2.png';
+import home  from '../../images/home.png';
 
 import {Container,  Typography, Grid } from '@material-ui/core';
 import useStyles from './styles';
@@ -25,7 +25,7 @@ function About() {
           </Typography>
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={6} >
-          <img  src={home2} alt="home"  height='280' className={classes.image}/>
+          <img  src={home} alt="home" align='right'  height='280' className={classes.image}/>
           </Grid>
       </Grid>
        
