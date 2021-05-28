@@ -22,7 +22,7 @@ const Showcase = () => {
         <ReactPlayer
         className ={classes.reactplayer}
         url="https://youtu.be/o9NAY3BrV7o"
-        width = "330px"
+        width = "328px"
         height = "300px"
         align='center'
       
