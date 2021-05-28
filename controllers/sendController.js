@@ -1,6 +1,4 @@
 const sendMail = require("./sendMail.js");
-const { google } = require("googleapis");
-const { OAuth2 } = google.auth;
 
 const sendController = {
     sendMethod: async (req, res) => {
@@ -23,7 +21,7 @@ const sendController = {
         }
     },
     sendMethodForContact: async (req, res) => {
-        console.log(req.body)
+        // console.log(req.body)
         try {
             const {
                 receiverEmail,

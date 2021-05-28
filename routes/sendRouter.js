@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 const sendController = require('../controllers/sendController.js');
-const auth = require("../middleware/auth.js");
 
 // Only for /api/send
 

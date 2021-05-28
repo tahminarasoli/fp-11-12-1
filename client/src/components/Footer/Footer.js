@@ -13,9 +13,9 @@ const Footer = () => {
                <p>
                   Become part of our story
       
-                  <a href="https://www.facebook.com/HackYFutureBE/" target="_blank"><img src= { image1} alt ="pic1"/></a>
-                  <a href="https://www.linkedin.com/company/hackyourfuture-belgium/" target="_blank"><img src={image3 } alt ="pic3"/></a>
-                  <a href="https://www.instagram.com/" target="_blank"><img src={image2} alt ="pic2"/></a>
+                  <a href="https://www.facebook.com/HackYFutureBE/" target="_blank" rel="noreferrer"><img src= { image1} alt ="pic1"/></a>
+                  <a href="https://www.linkedin.com/company/hackyourfuture-belgium/" target="_blank" rel="noreferrer"><img src={image3 } alt ="pic3"/></a>
+                  <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"><img src={image2} alt ="pic2"/></a>
       
                   <span>&copy; 2021 HELPY</span>
                </p>

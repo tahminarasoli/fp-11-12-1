@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, Card, TextField, Typography, CardHeader, Avatar, Container } from "@material-ui/core";
 import logo1 from "../../images/logo1.png";
@@ -17,7 +17,7 @@ const initialValues = {
 export const ContactForm = () => {
     const classes = useStyles();
     const { id } = useParams();
-
+    const history = useHistory();
     const dispatch = useDispatch();
     const token = useSelector((state) => state.token);
     const help = useSelector((state) => state.help);
@@ -62,7 +62,7 @@ export const ContactForm = () => {
 
     const handleConfirm = () => {
         setConfirm(null);
-        window.location.href = "/helps";
+        history.push("/helps");
     }
 
     return (

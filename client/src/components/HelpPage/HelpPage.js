@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-import { Grow, Container, Grid, Paper, TextField, AppBar, Button } from "@material-ui/core";
+import { Grow, Container, Grid } from "@material-ui/core";
 import Paginate from  '../../Pagination'
 import Helps from "../Help/Helps";
 import Form from "../Form/Form";
 import useStyles from "./styles";
-import { useDispatch } from "react-redux";
 
 const HelpPage = () => {
     const classes = useStyles();
     const [wantsToHelp, setWantsToHelp] = useState(false);
     const [currentId, setCurrentId] = useState(false);
-
+    // console.log(currentId)
     return (
         <Grow in>
             <Container maxWidth="xl">
@@ -36,6 +35,7 @@ const HelpPage = () => {
                             wantsToHelp={wantsToHelp}
                             setWantsToHelp={setWantsToHelp}
                             currentId={currentId}
+                            setCurrentId={setCurrentId}
                         />
                             <Paginate align='center'/>
                     </Grid>

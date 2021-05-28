@@ -25,7 +25,7 @@ import { getHelp } from "../../../actions/helpAction";
 const Help = ({ help, setCurrentId }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const [expanded, setExpanded] = React.useState(false);
+    const [expanded, setExpanded] = useState(false);
 
     const user = useSelector((state) => state.auth);
     const token = useSelector((state) => state.token);
@@ -34,7 +34,15 @@ const Help = ({ help, setCurrentId }) => {
     const handleUpdate = () => {
         setCurrentId(help._id);
         dispatch(getHelp(help._id, token));
+       
     };
+
+    const handleDelete = () => {
+        dispatch(deleteHelp(help._id, token))
+        setCurrentId(false);
+      
+    }
+    
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
@@ -105,8 +113,7 @@ const Help = ({ help, setCurrentId }) => {
           <IconButton
            size="small"
            color="secondary" 
-           onClick={() =>
-            dispatch(deleteHelp(help._id, token))}>
+           onClick={handleDelete}>
                <DeleteIcon />
          </IconButton>
           </>

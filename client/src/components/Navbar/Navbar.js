@@ -13,7 +13,7 @@ import {
 } from "@material-ui/core";
 import Fade from '@material-ui/core/Fade';
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import logo from "../../images/logo.png";
 import useStyles from "./styles";
 import { useSelector } from "react-redux";
@@ -65,11 +65,11 @@ const ListItemTextCustom = withStyles((theme) => ({
 
 const Navbar = () => {
     const classes = useStyles();
-
+    const history = useHistory();
     const auth = useSelector((state) => state.auth);
 
     const { user, isLogged } = auth;
-    console.log(user);
+    // console.log(user);
 
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
@@ -94,7 +94,7 @@ const Navbar = () => {
         } catch (err) {
             console.log(err);
         }
-        window.location.href = "/";
+        history.push("/");
         handleClose();
     };
 

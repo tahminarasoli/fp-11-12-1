@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+ import React, { useEffect } from "react";
 import Help from "./Help/Help";
 import NeedHelp from "./Help/NeedHelp";
 import useStyles from "./styles";
@@ -16,9 +16,9 @@ const Helps = ({ setCurrentId, wantsToHelp }) => {
 
     useEffect(() => {
         dispatch(getHelps(token));
-    }, [dispatch, token]);
+    }, [dispatch]);
 
-    console.log(helps);
+    // console.log(helps);
 
     const wantHelp = helps.filter((help) => help.wantsToHelp === true);
     const needHelp = helps.filter((help) => help.wantsToHelp === false);

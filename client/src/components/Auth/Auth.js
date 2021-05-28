@@ -9,7 +9,7 @@ import Input from "./Input";
 import { useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { dispatchLogin } from "../../actions/authActions";
-import Footer from "../Footer/Footer";
+
 
 import { GoogleLogin } from "react-google-login";
 import FacebookLogin from "react-facebook-login";

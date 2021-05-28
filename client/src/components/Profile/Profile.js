@@ -211,7 +211,7 @@ const Profile = () => {
                 setData({ ...data, err: err.response.data.msg, success: "" });
         }
     };
-    console.log(user);
+    // console.log(user);
 
     return (
         <>
