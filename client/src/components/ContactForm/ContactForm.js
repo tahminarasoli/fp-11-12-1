@@ -14,7 +14,7 @@ const initialValues = {
     messageContent: "",
 };
 
-export const ContactForm = () => {
+    const ContactForm = () => {
     const classes = useStyles();
     const { id } = useParams();
 
@@ -79,7 +79,6 @@ export const ContactForm = () => {
                  {confirm &&  <ConfirmModal title={confirm.title} message={confirm.message} onConfirm={handleConfirm}/>}
                 <div align="center">
                     <img src={logo1} alt="logo1" height="50" />
-                    <Typography variant="h5"></Typography>
                     <Typography variant="h5">Send a message</Typography>
                
                 <CardHeader align='center'

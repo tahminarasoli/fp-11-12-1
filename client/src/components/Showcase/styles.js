@@ -7,16 +7,16 @@ export default makeStyles((theme) => ({
     },
 
     container: {
-        alignItems: 'center',
-        margin: '50px 0',
-        background: ' #C5DDEB',
-        boxShadow: '-1px 1px 2px rgba(255, 255, 255, 0.3), 1px -1px 2px rgba(159, 174, 179, 0.5), inset 11px 11px 22px rgba(159, 174, 179, 0.2), inset -11px -11px 22px rgba(159, 174, 179, 0.2), inset 11px -11px 22px rgba(255, 255, 255, 0.9), inset -11px 11px 28px rgba(159, 174, 179, 0.9)',
-        borderRadius: "30",
-        display: 'flex',
-        flexWrap: "wrap",
-        justifyContent: "space-between"
-
-    },
+        width: "100%",
+        alignItems: "center",
+        margin: "50px 0",
+        background: " #C5DDEB",
+        boxShadow:
+          "-1px 1px 2px rgba(255, 255, 255, 0.3), 1px -1px 2px rgba(159, 174, 179, 0.5), inset 11px 11px 22px rgba(159, 174, 179, 0.2), inset -11px -11px 22px rgba(159, 174, 179, 0.2), inset 11px -11px 22px rgba(255, 255, 255, 0.9), inset -11px 11px 28px rgba(159, 174, 179, 0.9)",
+        borderRadius: 30,
+        display: "flex",
+        padding: "30px 50px",
+      },
     heading: {
         textDecoration: 'none',
         color: '#5B5B61',
@@ -26,6 +26,7 @@ export default makeStyles((theme) => ({
         padding: '0 40px',
         textDecoration: 'none',
         color: theme.palette.text.secondary,
+        textAlign: 'center',
 
     },
     paper: {

@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import "./Contact.css";
 import contact from "../../images/contact.png";
-import Card from "@material-ui/core/Card";
-import Container from "@material-ui/core/Container";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-
+import { Card, Container, Typography, TextField, Button } from "@material-ui/core";
+import logo1 from "../../images/logo1.png";
+import useStyles from "./styles";
 import { isEmail } from "../../utils/validation/Validation";
 import ConfirmModal from "../../utils/confirmation/ConfirmModal";
+import ErrorModal from "../../utils/error/ErrorModal"
 import { useDispatch } from "react-redux";
 import { toSendContact } from "../../actions/sendAction";
 
-function Contact() {
+    const Contact = () => {
+    const classes = useStyles();
     const [confirm, setConfirm] = useState();
     const dispatch = useDispatch();
+    const [ error, setError] = useState();
 
     const [data, setData] = useState({
         fullName: "",
@@ -42,7 +43,7 @@ function Contact() {
         setConfirm({
             title: "Message is sent successfully!",
             message:
-                "Thank you! for you message, we will get back to you soon, please! ",
+                "Thank you, for your message! ",
         });
     }
 
@@ -80,7 +81,7 @@ function Contact() {
             ...data,
             err: "",
             success:
-                "thank you! for you message, we will get back to you soon, please!",
+                "Thank you, for your message! We will get back to you soon!",
         });
     };
 
@@ -94,21 +95,33 @@ function Contact() {
     const handleConfirm = () => {
         setConfirm(null);
         window.location.href = "/";
+
     };
+    const handleError = () => {
+        setError(null);
+    }
     return (
         <>
             {err && <h1 className="error">{err}</h1>}
             {success && <h1 className="success">{success}</h1>}
             <div className="main">
                 <Card
-                    className="container"
+                   className={classes.paper}
                     maxWidth="xs"
-                    style={{ marginTop: "1rem" }}
+                    className={classes.paper}
+                    >
+                    <form
+                autoComplete="off"
+                noValidate
+                className={classes.form}
                 >
-                    <Container maxWidth="xs" style={{ marginTop: "1rem" }}>
-                        <h1>Send Us a message</h1>
+                    <Container maxWidth="xs">
+                        <div align='center'>
+                    <img src={logo1} alt="logo1" height="50" />
+                        <Typography variant="h5">Send a message</Typography>
+                        </div>
                         <TextField
-                            className="input"
+                            className={classes.input}
                             onInput={(e) => handle(e)}
                             label="Full Name"
                             id="fullName"
@@ -120,7 +133,7 @@ function Contact() {
                             required
                         />
                         <TextField
-                            className="input"
+                           className={classes.input}
                             onInput={(e) => handle(e)}
                             label="Email"
                             id="email"
@@ -131,37 +144,43 @@ function Contact() {
                             fullWidth
                             required
                         />
-                        <textarea
-                            className="text"
+                        <TextField
+                           className={classes.input}
                             onInput={(e) => handle(e)}
                             placeholder="Message"
                             id="message"
                             variant="outlined"
                             name="message"
+                            multiline
+                            rows={4}
                             value={data.message}
-                            margin="normal"
                             fullWidth
                             required
                         />
 
                         <Button
+                         className={classes.buttonSubmit}
                             type="submit"
                             onClick={handleSubmit}
                             color="primary"
                             variant="contained"
                             fullWidth
-                            style={{ marginTop: "1rem" }}
+                            
                         >
                             Submit
                         </Button>
                     </Container>
+                    </form>
                 </Card>
-                {confirm && (
+
+                { confirm && (
+                
                     <ConfirmModal
                         title={confirm.title}
                         message={confirm.message}
                         onConfirm={handleConfirm}
                     />
+                
                 )}
                 <div>
                     <img className="img" src={contact} alt="contact" />
