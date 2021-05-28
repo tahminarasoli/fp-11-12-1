@@ -9,12 +9,13 @@ import Button from "@material-ui/core/Button";
 import { isEmail } from "../../utils/validation/Validation";
 import ConfirmModal from "../../utils/confirmation/ConfirmModal";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { toSendContact } from "../../actions/sendAction";
 
 function Contact() {
     const [confirm, setConfirm] = useState();
     const dispatch = useDispatch();
-
+    const history = useHistory();
     const [data, setData] = useState({
         fullName: "",
         email: "",
@@ -93,7 +94,7 @@ function Contact() {
 
     const handleConfirm = () => {
         setConfirm(null);
-        window.location.href = "/";
+        history.push("/");
     };
     return (
         <>

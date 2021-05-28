@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Home from "./components/Home/Home";
 
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 
 import "./App.css";
