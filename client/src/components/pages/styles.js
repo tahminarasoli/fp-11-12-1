@@ -58,5 +58,9 @@ paragraph: {
         background: 'linear-gradient(90deg, #70D3FC 0%, #346AD1 100%)',
         boxShadow: 'box-shadow: 10px 10px 20px rgba(38, 80, 127, 0.2), -10px -10px 20px rgba(38, 80, 127, 0.2), 10px -10px 20px rgba(90, 188, 255, 0.9), -10px 10px 25px rgba(38, 80, 127, 0.9), inset -1px 1px 2px rgba(90, 188, 255, 0.3), inset 1px -1px 2px rgba(38, 80, 127, 0.5)',
         borderRadius: 30,
-      }
+      },
+      image: {
+        justify: 'center',
+        display: "flex",
+    },
     }));

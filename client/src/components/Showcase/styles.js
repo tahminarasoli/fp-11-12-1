@@ -14,12 +14,24 @@ export default makeStyles((theme) => ({
           "-1px 1px 2px rgba(255, 255, 255, 0.3), 1px -1px 2px rgba(159, 174, 179, 0.5), inset 11px 11px 22px rgba(159, 174, 179, 0.2), inset -11px -11px 22px rgba(159, 174, 179, 0.2), inset 11px -11px 22px rgba(255, 255, 255, 0.9), inset -11px 11px 28px rgba(159, 174, 179, 0.9)",
         borderRadius: 30,
         display: "flex",
-        padding: "30px 50px",
+        padding: "30px 30px",
       },
     heading: {
         textDecoration: 'none',
         color: '#5B5B61',
-        fontSize: '50px'
+        fontSize: '50px',
+        justify: 'center',
+        padding: '70px',
+        
+    },
+    image: {
+        justify: 'center',
+        display: "flex",
+    },
+    reactplayer: {
+        justify: 'center',
+        display: "flex",
+
     },
     paragraph: {
         padding: '0 40px',
@@ -29,12 +41,12 @@ export default makeStyles((theme) => ({
 
     },
     paper: {
-        margin: '20px auto',
+        margin: '30px auto',
         padding: "4px",
         textAlign: 'center',
         color: theme.palette.text.secondary,
-        maxWidth: '300px',
-        minHeight: '350px',
+        width: '350px',
+        height: '350px',
         background: ' #87C0F4',
         boxShadow: '1px 1px 2px rgba(189, 255, 255, 0.3), 1px -1px 2px rgba(81, 115, 146, 0.5), inset 10px 10px 20px rgba(81, 115, 146, 0.2), inset -10px -10px 20px rgba(81, 115, 146, 0.2), inset 10px -10px 20px rgba(189, 255, 255, 0.9), inset -10px 10px 25px rgba(81, 115, 146, 0.9)',
         borderRadius: 30,
@@ -44,8 +56,8 @@ export default makeStyles((theme) => ({
         padding: theme.spacing(1),
         textAlign: 'center',
         color: theme.palette.text.secondary,
-        maxWidth: '300px',
-        minHeight: '350px',
+        width: '350px',
+        height: '350px',
         background: ' #F499AB',
         boxShadow: '-1px 1px 2px rgba(255, 214, 239, 0.3), 1px -1px 2px rgba(146, 92, 103, 0.5), inset 10px 10px 20px rgba(146, 92, 103, 0.2), inset -10px -10px 20px rgba(146, 92, 103, 0.2), inset 10px -10px 20px rgba(255, 214, 239, 0.9), inset -10px 10px 25px rgba(146, 92, 103, 0.9)',
         borderRadius: 30,
@@ -64,5 +76,13 @@ export default makeStyles((theme) => ({
     img1: {
         width: "300px",
         height: "300px"
-    }
+    },
+    grid: {
+   
+    display: 'flex',
+   flexDirection: 'row',
+   justifyContent: 'space-between',
+    alignItems: 'center',
+   
+  },
 }));
