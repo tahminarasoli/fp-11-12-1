@@ -9,8 +9,12 @@ import {
     MenuItem,
     withStyles,
     ListItemText,
+    IconButton
  
 } from "@material-ui/core";
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import MenuIcon from '@material-ui/icons/Menu';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 import Fade from '@material-ui/core/Fade';
 
 import { Link } from "react-router-dom";
@@ -18,7 +22,7 @@ import logo from "../../images/logo.png";
 import useStyles from "./styles";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import { IconContext } from "react-icons";
+
 import { SidebarData } from "./SidebarData";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
@@ -104,7 +108,7 @@ const Navbar = () => {
                     <Avatar
                         className={classes.purple}
                         src={user?.avatar}
-                        alt={user?.name}
+                        alt={user?.name?.first}
                     >
                     </Avatar>
                     <Button 
@@ -133,27 +137,16 @@ const Navbar = () => {
                         component={Link}
                         to="/profile"
                     >
+                         <AccountCircle  color='primary'/>
                         <ListItemTextCustom primary="PROFILE" />
                     </StyledMenuItem>
-                    <StyledMenuItem
-                        onClick={handleClose}
-                        component={Link}
-                        to="/"
-                    >
-                        <ListItemTextCustom primary="HOME" />
-                    </StyledMenuItem>
-                    <StyledMenuItem
-                        onClick={handleClose}
-                        component={Link}
-                        to="/helps"
-                    >
-                        <ListItemTextCustom primary="HELPS" />
-                    </StyledMenuItem>
+                    
                     <StyledMenuItem
                         onClick={handleLogout}
                         component={Link}
                         to="/"
                     >
+                        <ExitToAppIcon  color='secondary'/>
                         <ListItemTextCustom primary="LOGOUT" />
                     </StyledMenuItem>
                 </StyledMenu>
@@ -162,21 +155,24 @@ const Navbar = () => {
     };
 
     return (
-        <AppBar className={classes.appBar} position="static">
-            <div className={classes.brandContainer}>
-                <Link to="/">
-                    <img className={classes.image} src={logo} alt="logo" />
+
+    <div className={classes.root}>
+        <AppBar  position="static" className={classes.appBar}>
+            <Toolbar>
+            <Link  
+              edge='start'
+              to="/">
+                    <img className={classes.image} src={logo} alt="logo" height='100'/>
                 </Link>
                 <Typography
                     component={Link}
                     to="/"
-                    className={classes.heading}
+                    className={classes.title}
                     variant="h3"
+                    noWrap
                 >
-                    We help with shopping{" "}
+                    We help with shopping
                 </Typography>
-            </div>
-            <Toolbar className={classes.toolbar}>
                 {isLogged ? (
                     userLink()
                 ) : (
@@ -190,17 +186,16 @@ const Navbar = () => {
                         color="primary"
                     >
                         Log in
-
+                <AccountCircle  className={classes.icon}/>
                     </Button>
                 )}
-                {!isLogged && (
+               
                     <>
-                    <IconContext.Provider value={{ color: "#fff" }}>
-                    <div className="navbar">
-                        <Link to="#" className="menu-bars">
-                            <FaIcons.FaBars onClick={showSidebar} />
-                        </Link>
-                    </div>
+                    <Button edge='end' className={classes.menuButton} color="inherit" aria-label="menu" >
+                        <MenuIcon onClick={showSidebar} fontSize='large'/>
+                       
+                  
+                  
                     <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
                         <ul className="nav-menu-items" onClick={showSidebar}>
                             <li className="navbar-toggle">
@@ -220,11 +215,14 @@ const Navbar = () => {
                             })}
                         </ul>
                     </nav>
-                </IconContext.Provider>
+            
+                   
+                </Button>
                     </>
-                )}
+                
             </Toolbar>
         </AppBar>
+        </div>
     );
 
 };

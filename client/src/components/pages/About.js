@@ -25,7 +25,7 @@ function About() {
           </Typography>
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={6} >
-          <img  src={home} alt="home" align='right'  height='280' className={classes.image}/>
+          <img  src={home} alt="home" align='right' width='100%' height='380' className={classes.image}/>
           </Grid>
       </Grid>
        
