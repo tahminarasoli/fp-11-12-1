@@ -109,7 +109,9 @@ const Navbar = () => {
                         className={classes.purple}
                         src={user?.avatar}
                         alt={user?.name?.first}
+                        
                     >
+                        
                     </Avatar>
                     <Button 
                         className={classes.profile_button}

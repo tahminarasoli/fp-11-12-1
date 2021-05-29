@@ -80,24 +80,33 @@ export default makeStyles((theme) => ({
       margin: "0 20px"
   },
   profile_button:  {
-     width: '200px',
+
+    
+      width: '200px',
       height: '40px',
       color: '#5B5B61',
       background: 'linear-gradient(135deg, #BBD2DF 0%, #CFE8F7 100%)',
       boxShadow: '2px 2px 4px rgba(118, 133, 141, 0.2), -2px -2px 4px rgba(118, 133, 141, 0.2), 2px -2px 4px rgba(255, 255, 255, 0.9), -2px 2px 5px rgba(118, 133, 141, 0.9), inset -1px 1px 2px rgba(255, 255, 255, 0.3), inset 1px -1px 2px rgba(118, 133, 141, 0.5)',
       borderRadius: 30,
-      backgroundColor: fade(theme.palette.common.white, 0.15),
-      '&:hover': {
-        backgroundColor: fade(theme.palette.common.white, 0.25),
-      },
-      marginLeft: 0,
-   
-      [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(1),
-        width: '200px',
-      },
   },
-  
+  menu: window.matchMedia("(max-width: 700px)").matches ? {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
+      width: "100vw",
+      height: "90%",
+  } : {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
+      width: "100vw",
+      height: "90%",
+  },
+  menuItem: {
+      height: "100px",
+      fontSize: "25px",
+  }
+
   
     
    
