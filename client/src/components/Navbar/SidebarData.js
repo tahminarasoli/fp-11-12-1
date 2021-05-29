@@ -4,12 +4,19 @@ import HomeIcon from '@material-ui/icons/Home';
 import InfoIcon from '@material-ui/icons/Info';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import SettingsApplicationsIcon from '@material-ui/icons/SettingsApplications';
+import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
 
 export const SidebarData = [
   {
     title: "Home",
     path: "/",
     icon: <HomeIcon style={{ color: '#87C0F4' }} />,
+    cName: "nav-text",
+  },
+  {
+    title: "Helps",
+    path: "/helps",
+    icon:<AccessibilityNewIcon color="secondary" />,
     cName: "nav-text",
   },
 
@@ -31,4 +38,5 @@ export const SidebarData = [
     icon:<SettingsApplicationsIcon color="secondary" />,
     cName: "nav-text",
   },
+
 ];
