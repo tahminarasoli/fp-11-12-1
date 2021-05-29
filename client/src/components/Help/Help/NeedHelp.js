@@ -96,14 +96,16 @@ const NeedHelp = ({ help, setCurrentId }) => {
                 </Collapse>
             </CardContent>
             <CardActions className={classes.cardActions}>
-                <IconButton
-                    style={{ color: "grey" }}
-                    size="small"
-                    component={Link}
-                    to={`/contactPage/${help._id}`}
-                >
-                    <ContactPhoneIcon />
-                </IconButton>
+                {user.user.email !== help.email ? (
+                    <IconButton
+                        style={{ color: "grey" }}
+                        size="small"
+                        component={Link}
+                        to={`/contactPage/${help._id}`}
+                    >
+                        <ContactPhoneIcon />
+                    </IconButton>
+                ) : null}
 
                 {user.user.email === help.email ? (
                     <>

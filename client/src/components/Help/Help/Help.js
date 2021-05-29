@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import clsx from 'clsx';
+import clsx from "clsx";
 import useStyles from "./styles";
 import {
     CardActions,
@@ -8,13 +8,13 @@ import {
     Card,
     CardHeader,
     Avatar,
-   IconButton,
-   Collapse
+    IconButton,
+    Collapse,
 } from "@material-ui/core";
 
 import DeleteIcon from "@material-ui/icons/Delete";
 import ContactPhoneIcon from "@material-ui/icons/ContactPhone";
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import EditIcon from "@material-ui/icons/Edit";
 import { Link } from "react-router-dom";
@@ -34,93 +34,101 @@ const Help = ({ help, setCurrentId }) => {
     const handleUpdate = () => {
         setCurrentId(help._id);
         dispatch(getHelp(help._id, token));
-       
     };
 
     const handleDelete = () => {
-        dispatch(deleteHelp(help._id, token))
+        dispatch(deleteHelp(help._id, token));
         setCurrentId(false);
-      
-    }
-    
+    };
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
-      };
+    };
 
     return (
-        <Card 
-        className={classes.card} 
-        raised 
-        >
-    <CardHeader
-        avatar={ 
-             <Avatar 
-             className={classes.large} 
-             title={help?.name} src={help?.avatar} 
-             alt={help?.name}
-              >
+        <Card className={classes.card} raised>
+            <CardHeader
+                avatar={
+                    <Avatar
+                        className={classes.large}
+                        title={help?.name}
+                        src={help?.avatar}
+                        alt={help?.name}
+                    ></Avatar>
+                }
+                title={help?.address?.city}
+                subheader={`Available: ${help?.availableSlot}`}
+            />
 
-              </Avatar> 
-    }
-            title={help?.address?.city}
-            subheader={`Available: ${help?.availableSlot}`}/>
+            <Typography
+                className={classes.title}
+                gutterBottom
+                variant="h5"
+                component="h2"
+            >
+                {help.helpTitle}
+            </Typography>
+            <CardContent>
+                <Typography variant="h6" color="textSecondary" component="h2">
+                    Details:
+                </Typography>
+                <IconButton
+                    className={clsx(classes.expand, {
+                        [classes.expandOpen]: expanded,
+                    })}
+                    size="small"
+                    onClick={handleExpandClick}
+                    aria-expanded={expanded}
+                    aria-label="show more"
+                >
+                    <ExpandMoreIcon />
+                </IconButton>
 
-       
-       <Typography className={classes.title} gutterBottom  variant="h5" component="h2">{help.helpTitle}</Typography>
-        <CardContent>
-        <Typography variant="h6" color="textSecondary" component="h2">Details:</Typography>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          size="small"
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
-        
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <Typography variant="body2" color="textSecondary" component="p">{help.description.split(' ').splice(0, 200).join(' ')}...</Typography>
-          </Collapse>
-        </CardContent>
-        <CardActions 
-        className={classes.cardActions}
-        >
-            <IconButton
-            style={{color:'grey'}}
-            size="small"
-            component={Link}
-            to={`/contactPage/${help._id}`}
-             >
-                  <ContactPhoneIcon />
-                </IconButton> 
-               
-{user.user.email === help.email ? (
-    <>
-    
-          <IconButton
-            size='small'
-            to={`/contactPage/${help._id}`}
-            color='primary'
-            name="edit"
-            onClick={handleUpdate}
-          >
-            <EditIcon />
-          </IconButton>
-          <IconButton
-           size="small"
-           color="secondary" 
-           onClick={handleDelete}>
-               <DeleteIcon />
-         </IconButton>
-          </>
-          ) : null}
-        
-      </CardActions>
-    </Card>
-  );
+                <Collapse in={expanded} timeout="auto" unmountOnExit>
+                    <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        component="p"
+                    >
+                        {help.description.split(" ").splice(0, 200).join(" ")}
+                        ...
+                    </Typography>
+                </Collapse>
+            </CardContent>
+            <CardActions className={classes.cardActions}>
+                {user.user.email !== help.email ? (
+                    <IconButton
+                        style={{ color: "grey" }}
+                        size="small"
+                        component={Link}
+                        to={`/contactPage/${help._id}`}
+                    >
+                        <ContactPhoneIcon />
+                    </IconButton>
+                ) : null}
+
+                {user.user.email === help.email ? (
+                    <>
+                        <IconButton
+                            size="small"
+                            to={`/contactPage/${help._id}`}
+                            color="primary"
+                            name="edit"
+                            onClick={handleUpdate}
+                        >
+                            <EditIcon />
+                        </IconButton>
+                        <IconButton
+                            size="small"
+                            color="secondary"
+                            onClick={handleDelete}
+                        >
+                            <DeleteIcon />
+                        </IconButton>
+                    </>
+                ) : null}
+            </CardActions>
+        </Card>
+    );
 };
 export default Help;

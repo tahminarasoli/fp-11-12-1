@@ -8,3 +8,7 @@
     letter-spacing: 1.3px;
     box-shadow: 0 2px 4px #777;
 }
+
+.social span button{
+    margin-left: -16px;
+}
