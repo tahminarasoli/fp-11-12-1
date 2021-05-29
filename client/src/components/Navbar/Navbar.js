@@ -109,19 +109,18 @@ const Navbar = () => {
                         className={classes.purple}
                         src={user?.avatar}
                         alt={user?.name?.first}
+                      
                     >
+                        
                     </Avatar>
                     <Button 
                         className={classes.profile_button}
                         aria-controls="fade-menu" 
                         aria-haspopup="true"
                         onClick={handleClick}
+                        variant='contained'
                     >
-                        {user
-                            ? `${user?.name}` === "undefined"
-                                ? null
-                                : `${user?.name}`
-                            : null}
+                        <AccountCircle  style={{color: '#F499AB', fontSize: '40'}}/>
                     </Button>
               </div>
                 <StyledMenu
