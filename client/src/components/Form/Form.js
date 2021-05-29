@@ -70,6 +70,7 @@ export const Form = ({
 
     const handleClear = () => {
         setCardData(initialValues);
+        setCurrentId(false);
     };
     const switchMode = () => {
         setWantsToHelp((prevWantsToHelp) => !prevWantsToHelp);
