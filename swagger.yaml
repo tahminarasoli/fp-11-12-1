@@ -71,31 +71,52 @@ components:
 
 paths:
 
-  /user/register:
+  /api/user/register:
     post:
       summary: Register a new User
-      description: Register a new User in the database
+      description: Register a new User in the database after click the link which will receive from the response
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/User"
+              type: object
+              properties:
+                first:
+                  type: string
+                last:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                phone:
+                  type: string
+              required:
+                - first
+                - last
+                - email
+                - password
+                - phone
 
       responses:
         201:
-          description: User created succesfully
+          description: Sending register link to your mail address. You must go to your mail and click to create user in database 
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  error:
+                  name:
                     type: string
-                  _id:
+                  email:
+                    type: string
+                  password:
+                    type: string
+                  phone:
                     type: string
 
-  /user/login:
+  /api/user/login:
     post:
       summary: Login a User
       description: Login a User in order to get JWT token (auth-token)
@@ -110,6 +131,9 @@ paths:
                   type: string
                 password:
                   type: string
+              required:
+                - email
+                - password
       
       responses:
         200:
@@ -119,9 +143,9 @@ paths:
               schema:
                 type: object
                 properties:
-                  error:
+                  email:
                     type: string
-                  data:
+                  password:
                     type: string
 
 
