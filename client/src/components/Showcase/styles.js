@@ -5,6 +5,18 @@ export default makeStyles((theme) => ({
         flexGrow: 1,
     },
 
+    container1: {
+        width: "100%",
+        height:"100%",
+        alignItems: "center",
+        margin: "50px 0",
+        background: " #C5DDEB",
+        boxShadow:
+          "-1px 1px 2px rgba(255, 255, 255, 0.3), 1px -1px 2px rgba(159, 174, 179, 0.5), inset 11px 11px 22px rgba(159, 174, 179, 0.2), inset -11px -11px 22px rgba(159, 174, 179, 0.2), inset 11px -11px 22px rgba(255, 255, 255, 0.9), inset -11px 11px 28px rgba(159, 174, 179, 0.9)",
+        borderRadius: 30,
+        display: "flex",
+        padding: "30px 30px",
+      },
     container: {
         width: "100%",
         alignItems: "center",
@@ -41,7 +53,7 @@ export default makeStyles((theme) => ({
 
     },
     paper: {
-        margin: '30px auto',
+      padding: theme.spacing(1),
         padding: "4px",
         textAlign: 'center',
         color: theme.palette.text.secondary,
