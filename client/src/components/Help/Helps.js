@@ -28,10 +28,11 @@ const Helps = ({ setCurrentId, wantsToHelp }) => {
             {wantsToHelp ? (
                 <>
                  <Typography
+                      align='center'
                     noWrap
-                   variant='h5'
+                   variant='h4'
                    className={classes.heading}
-                 > People Who need help</Typography>
+                 > People who need help</Typography>
                     <Grid
                         className={classes.container}
                         container
@@ -81,8 +82,8 @@ const Helps = ({ setCurrentId, wantsToHelp }) => {
             ) : (
                 <>
                   <Typography   
-                 
-                variant='h5'
+                 align='center'
+                variant='h4'
                 className={classes.heading} >Volunteers</Typography>
                     <Grid
                         className={classes.container}
