@@ -101,60 +101,7 @@ const Navbar = () => {
         handleClose();
     };
 
-    const userLink = () => {
-        return (
-            <div>
-                <div className={classes.profile}>
-                    <Avatar
-                        className={classes.purple}
-                        src={user?.avatar}
-                        alt={user?.name?.first}
-                        
-                    >
-                        
-                    </Avatar>
-                    <Button 
-                        className={classes.profile_button}
-                        aria-controls="fade-menu" 
-                        aria-haspopup="true"
-                        onClick={handleClick}
-                    >
-                        {user
-                            ? `${user?.name}` === "undefined"
-                                ? null
-                                : `${user?.name}`
-                            : null}
-                    </Button>
-              </div>
-                <StyledMenu
-                    id="fade-menu"
-                    anchorEl={anchorEl}
-                    keepMounted
-                    open={open}
-                    onClose={handleClose}
-                    TransitionComponent={Fade}
-                >
-                    <StyledMenuItem
-                        onClick={handleProfile}
-                        component={Link}
-                        to="/profile"
-                    >
-                         <AccountCircle  color='primary'/>
-                        <ListItemTextCustom primary="PROFILE" />
-                    </StyledMenuItem>
-                    
-                    <StyledMenuItem
-                        onClick={handleLogout}
-                        component={Link}
-                        to="/"
-                    >
-                        <ExitToAppIcon  color='secondary'/>
-                        <ListItemTextCustom primary="LOGOUT" />
-                    </StyledMenuItem>
-                </StyledMenu>
-            </div>
-        );
-    };
+   
 
     return (
 
@@ -176,7 +123,56 @@ const Navbar = () => {
                     We help with shopping
                 </Typography>
                 {isLogged ? (
-                    userLink()
+                    <>
+              
+             <Button 
+                  className={classes.profile_button}
+                 aria-controls="fade-menu" 
+                 aria-haspopup="true"
+                 onClick={handleClick}
+             >
+                    <Avatar
+                   className={classes.purple}
+                 src={user?.avatar}
+                 alt={user?.name?.first}
+                 
+             >
+                 
+             </Avatar>
+                 {user
+                     ? `${user?.name}` === "undefined"
+                         ? null
+                         : `${user?.name}`
+                     : null}
+             </Button>
+      
+         <StyledMenu
+             id="fade-menu"
+             anchorEl={anchorEl}
+             keepMounted
+             open={open}
+             onClose={handleClose}
+             TransitionComponent={Fade}
+         >
+             <StyledMenuItem
+                 onClick={handleProfile}
+                 component={Link}
+                 to="/profile"
+             >
+                  <AccountCircle  color='primary'/>
+                 <ListItemTextCustom primary="PROFILE" />
+             </StyledMenuItem>
+             
+             <StyledMenuItem
+                 onClick={handleLogout}
+                 component={Link}
+                 to="/"
+             >
+                 <ExitToAppIcon  color='secondary'/>
+                 <ListItemTextCustom primary="LOGOUT" />
+             </StyledMenuItem>
+         </StyledMenu>
+         </>
                 ) : (
                    
                     <Button
