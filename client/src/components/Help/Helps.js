@@ -2,7 +2,7 @@
 import Help from "./Help/Help";
 import NeedHelp from "./Help/NeedHelp";
 import useStyles from "./styles";
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { getHelps } from "../../actions/helpsActions";
 
@@ -27,6 +27,12 @@ const Helps = ({ setCurrentId, wantsToHelp }) => {
         <>
             {wantsToHelp ? (
                 <>
+                 <Typography
+                      align='center'
+                    noWrap
+                   variant='h4'
+                   className={classes.heading}
+                 > People who need help</Typography>
                     <Grid
                         className={classes.container}
                         container
@@ -34,6 +40,7 @@ const Helps = ({ setCurrentId, wantsToHelp }) => {
                         spacing={3}
                     >
                         {needHelp.map((help) => (
+                           
                             <Grid
                                 key={help._id}
                                 item
@@ -42,17 +49,20 @@ const Helps = ({ setCurrentId, wantsToHelp }) => {
                                 md={6}
                                 lg={3}
                             >   
+                            
                                 <NeedHelp help={help} setCurrentId={setCurrentId} />
                                
                             </Grid>
                         ))}
                     </Grid>
+                  
                     <Grid
                         className={classes.container}
                         container
                         alignItems="stretch"
                         spacing={3}
                     >
+                       
                         {wantHelp.map((help) => (
                             <Grid
                                 key={help._id}
@@ -71,12 +81,17 @@ const Helps = ({ setCurrentId, wantsToHelp }) => {
                 </>
             ) : (
                 <>
+                  <Typography   
+                 align='center'
+                variant='h4'
+                className={classes.heading} >Volunteers</Typography>
                     <Grid
                         className={classes.container}
                         container
                         alignItems="stretch"
                         spacing={3}
                     >
+                      
                         {wantHelp.map((help) => (
                             <Grid
                                 key={help._id}
@@ -86,6 +101,7 @@ const Helps = ({ setCurrentId, wantsToHelp }) => {
                                 md={6}
                                 lg={3}
                             >
+                                
                                 <Help help={help} setCurrentId={setCurrentId} />
                                
                             </Grid>
@@ -98,6 +114,7 @@ const Helps = ({ setCurrentId, wantsToHelp }) => {
                         alignItems="stretch"
                         spacing={3}
                     >
+                       
                         {needHelp.map((help) => (
                             <Grid
                                 key={help._id}

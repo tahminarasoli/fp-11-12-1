@@ -37,7 +37,7 @@ const HelpPage = () => {
                             currentId={currentId}
                             setCurrentId={setCurrentId}
                         />
-                            <Paginate align='center'/>
+                          
                     </Grid>
                 </Grid>
             </Container>
