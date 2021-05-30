@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Contact.css";
+
 import contact from "../../images/contact.png";
 import {
     Card,
@@ -7,6 +7,7 @@ import {
     Typography,
     TextField,
     Button,
+    Grid
 } from "@material-ui/core";
 import logo1 from "../../images/logo1.png";
 import useStyles from "./styles";
@@ -108,8 +109,10 @@ const Contact = () => {
 
     return (
         <>
-            <div className="main">
-                <Card className={classes.paper} maxWidth="xs">
+            <Container component='main' className={classes.root}>
+            <Grid  container spacing={2} className={classes.container}>
+            <Grid item xs={12} sm={12} md={6} lg={6}  className={classes.paper}>
+              
                     <form
                         autoComplete="off"
                         noValidate
@@ -174,8 +177,10 @@ const Contact = () => {
                                 Submit
                             </Button>
                         </Container>
+
                     </form>
-                </Card>
+
+             
 
                 {confirm && (
                     <ConfirmModal
@@ -184,10 +189,13 @@ const Contact = () => {
                         onConfirm={handleConfirm}
                     />
                 )}
-                <div>
-                    <img className="img" src={contact} alt="contact" />
-                </div>
-            </div>
+                </Grid>
+                <Grid item xs={12} sm={12} md={6} lg={6} >
+                    <img className="img" width='100%' src={contact} alt="contact" />
+                </Grid>
+            </Grid>
+            </Container>
+
         </>
     );
 };
