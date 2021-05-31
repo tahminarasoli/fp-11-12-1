@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
 backdrop: {
+  flexGrow: 1,
     position: 'fixed',
     top: 0,
     left: 0,
@@ -12,12 +13,12 @@ backdrop: {
   
   modal: {
     padding: theme.spacing(2),
-    width: '400px',
+    width: '300px',
     height:'200px',
     borderRadius: 30,
     position: 'fixed',
     top: '30vh',
-    left: '36%',
+    left: '30%',
     zIndex: 100,
     overflow: 'hidden',
     display: 'flex',
@@ -37,8 +38,8 @@ color: 'white',
   button: {
   margin: 'auto',
     position: 'relative',
-    width: '220px',
-    height: '60px',
+    width: '200px',
+    height: '50px',
     background: 'linear-gradient(90deg, #70D3FC 0%, #346AD1 100%)',
     boxShadow: 'box-shadow: 10px 10px 20px rgba(38, 80, 127, 0.2), -10px -10px 20px rgba(38, 80, 127, 0.2), 10px -10px 20px rgba(90, 188, 255, 0.9), -10px 10px 25px rgba(38, 80, 127, 0.9), inset -1px 1px 2px rgba(90, 188, 255, 0.3), inset 1px -1px 2px rgba(38, 80, 127, 0.5)',
     borderRadius: 30,

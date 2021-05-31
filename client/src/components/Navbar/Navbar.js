@@ -9,7 +9,7 @@ import {
     MenuItem,
     withStyles,
     ListItemText,
-    IconButton
+
  
 } from "@material-ui/core";
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
@@ -24,7 +24,6 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 
 import { SidebarData } from "./SidebarData";
-import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import "./Navbar.css";
 
@@ -124,14 +123,7 @@ const Navbar = () => {
                 </Typography>
                 {isLogged ? (
                     <>
-              
-             <Button 
-                  className={classes.profile_button}
-                 aria-controls="fade-menu" 
-                 aria-haspopup="true"
-                 onClick={handleClick}
-             >
-                    <Avatar
+                <Avatar
                    className={classes.purple}
                  src={user?.avatar}
                  alt={user?.name?.first}
@@ -139,6 +131,13 @@ const Navbar = () => {
              >
                  
              </Avatar>
+             <Button 
+                  className={classes.profile_button}
+                 aria-controls="fade-menu" 
+                 aria-haspopup="true"
+                 onClick={handleClick}
+             >
+                  
                  {user
                      ? `${user?.name}` === "undefined"
                          ? null
@@ -190,7 +189,7 @@ const Navbar = () => {
                
                     <>
                     <Button edge='end' className={classes.menuButton} color="inherit" aria-label="menu" >
-                        <MenuIcon onClick={showSidebar} fontSize='large'/>
+                        <MenuIcon  onClick={showSidebar} fontSize='large'/>
                        
                   
                   

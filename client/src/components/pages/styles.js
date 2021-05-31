@@ -102,7 +102,7 @@ paragraph: {
       height: "300px"
   },
   grid: {
- 
+    marginLeft: '-30px',
   display: 'flex',
  flexDirection: 'row',
  justifyContent: 'space-between',

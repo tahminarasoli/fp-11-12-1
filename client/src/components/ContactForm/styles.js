@@ -2,17 +2,32 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
 
-      paper: {
-        width: '400px',
-        marginTop: theme.spacing(4),
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        padding: theme.spacing(2),
-        background: 'linear-gradient(135deg, #CFE8F7 0%, #BBD2DF 100%)',
-        boxShadow: '11px 11px 22px rgba(118, 133, 141, 0.2), -11px -11px 22px rgba(118, 133, 141, 0.2), 11px -11px 22px rgba(255, 255, 255, 0.9), -11px 11px 28px rgba(118, 133, 141, 0.9), inset -1px 1px 2px rgba(255, 255, 255, 0.3), inset 1px -1px 2px rgba(118, 133, 141, 0.5)',
-        borderRadius: 30,
-      },
+  root: {
+    flexGrow: 1,
+},
+
+container: {
+  width: "100%",
+  alignItems: "center",
+  margin: "50px 0",
+  background: " #C5DDEB",
+  boxShadow:
+    "-1px 1px 2px rgba(255, 255, 255, 0.3), 1px -1px 2px rgba(159, 174, 179, 0.5), inset 11px 11px 22px rgba(159, 174, 179, 0.2), inset -11px -11px 22px rgba(159, 174, 179, 0.2), inset 11px -11px 22px rgba(255, 255, 255, 0.9), inset -11px 11px 28px rgba(159, 174, 179, 0.9)",
+  borderRadius: 30,
+  display: "flex",
+  padding: "50px 50px",
+},
+paper: {
+  width: '100%',
+  marginTop: theme.spacing(4),
+  display: 'flex',
+  
+  alignItems: 'center',
+  padding: theme.spacing(2),
+  background: 'linear-gradient(135deg, #CFE8F7 0%, #BBD2DF 100%)',
+  boxShadow: '11px 11px 22px rgba(118, 133, 141, 0.2), -11px -11px 22px rgba(118, 133, 141, 0.2), 11px -11px 22px rgba(255, 255, 255, 0.9), -11px 11px 28px rgba(118, 133, 141, 0.9), inset -1px 1px 2px rgba(255, 255, 255, 0.3), inset 1px -1px 2px rgba(118, 133, 141, 0.5)',
+  borderRadius: 30,
+},
       large: {
         width: theme.spacing(9),
         height: theme.spacing(9),

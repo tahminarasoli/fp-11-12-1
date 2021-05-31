@@ -54,7 +54,7 @@ export default makeStyles((theme) => ({
     },
     paper: {
       padding: theme.spacing(1),
-        padding: "4px",
+     
         textAlign: 'center',
         color: theme.palette.text.secondary,
         width: '350px',
@@ -90,7 +90,7 @@ export default makeStyles((theme) => ({
         height: "300px"
     },
     grid: {
-   
+   marginLeft: '-30px',
     display: 'flex',
    flexDirection: 'row',
    justifyContent: 'space-between',

@@ -2,7 +2,6 @@ import {  makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles ((theme) => ({
 card: {
- 
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -21,11 +20,6 @@ card1: {
   boxShadow: '1px 1px 2px rgba(255, 214, 239, 0.3), -1px -1px 2px rgba(146, 92, 103, 0.5), inset -10px 10px 20px rgba(146, 92, 103, 0.2), inset 10px -10px 20px rgba(146, 92, 103, 0.2), inset -10px -10px 20px rgba(255, 214, 239, 0.9), inset 10px 10px 25px rgba(146, 92, 103, 0.9)',
   borderRadius: 30, 
 },
-
-
-
-
- 
 
 grid: {
   display: 'flex',

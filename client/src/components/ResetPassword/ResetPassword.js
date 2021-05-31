@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import './resetPassword.css'
 
+import useStyles from "./styles";
+import logo1 from "../../images/logo1.png";
 import {
     showErrMsg,
     showSuccessMsg,
 } from "../../utils/notification/Notification";
 
 import { isMatch, isLength } from "../../utils/validation/Validation";
+import { Button, TextField, Typography, Paper, Container, Grid } from "@material-ui/core";
 
 const initialState = {
     password: "",
@@ -18,6 +20,7 @@ const initialState = {
 };
 
 const ResetPassword = () => {
+    const classes = useStyles();
     const { token } = useParams();
     const [data, setData] = useState(initialState);
 
@@ -58,36 +61,63 @@ const ResetPassword = () => {
         }
     };
 
-    return (
-        <div className="fg_pass">
-            <h2>Reset Your Password?</h2>
-            <div className="row">
+    return ( 
+    <Container component="main" maxWidth="xs" >
+    <Paper className={classes.paper} >
+                <img
+                   
+                    src={logo1}
+                    alt="logo1"
+                    height="50"
+                />
+            <Typography variant='h5' >Reset Your Password?</Typography>
+            <form 
+             autoComplete="off"
+             noValidate
+            className={classes.form}>
                 {err && showErrMsg(err)}
                 {success && showSuccessMsg(success)}
-
-                <label htmlFor="password">Password</label>
-                <input
+                <Grid container spacing={2}>
+                <TextField
+                  variant="outlined"
+                  fullWidth
+                   className={classes.input}
                     type="password"
                     placeholder="Enter password"
+                    label="Enter password"
                     id="password"
                     defaultValue={password}
                     name="password"
                     onChange={handleChangeInput}
+                    required
+                    autoFocus
                 />
 
-                <label htmlFor="cf_password">Confirm Password</label>
-                <input
+                <TextField
+                 className={classes.input}
+                       variant="outlined"
+                    label="Confirm password"
                     type="password"
+                    fullWidth
                     placeholder="Confirm password"
                     id="cf_password"
                     defaultValue={cf_password}
                     name="cf_password"
                     onChange={handleChangeInput}
+                    required
+                    autoFocus
+                    
                 />
-
-                <button onClick={handleResetPassword}>Reset Password</button>
-            </div>
-        </div>
+                </Grid>
+                <Button  
+                 fullWidth
+                 variant="contained"
+                 color="primary"
+                className={classes.submit} onClick={handleResetPassword}>Reset Password</Button>
+           
+                </form>
+            </Paper>
+      </Container>
     );
 };
 

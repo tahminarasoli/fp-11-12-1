@@ -14,20 +14,20 @@
 
 .nav-menu.active {
   background-color: #C5DDEB;
-  width: 320px;
+  width: 390px;
   height: 80vh;
   display: flex;
   justify-content: left;
   align-items: left;
   position: absolute;
-  top: -20px;
+  top: -40px;
   right: -20px;
   transition: 850ms;
 }
 
 .nav-text {
   display: flex;
-  justify-content: flex-start;
+  
   align-items: center;
   padding: 4px 0px 4px 4px;
   list-style: none;
@@ -63,10 +63,7 @@
   align-items: center;
 }
 
-span {
-  margin-left: 20px;
 
-}
 
 
 

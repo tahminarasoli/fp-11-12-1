@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import contact from "../../images/contact.png";
 import {
-    Card,
+   
     Container,
     Typography,
     TextField,

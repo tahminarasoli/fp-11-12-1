@@ -91,7 +91,7 @@ export const Form = ({
     
     
     return (
-        <Paper className={classes.paper} elevation={6}>
+        <Paper className={classes.paper} >
             <form
                 autoComplete="off"
                 noValidate

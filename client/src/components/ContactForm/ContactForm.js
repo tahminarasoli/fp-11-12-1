@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Card, TextField, Typography, CardHeader, Avatar, Container } from "@material-ui/core";
+import { Button, Card, TextField, Typography, CardHeader, Avatar, Container, Grid } from "@material-ui/core";
 import logo1 from "../../images/logo1.png";
 import useStyles from "./styles";
 import ConfirmModal from "../../utils/confirmation/ConfirmModal";
@@ -66,18 +66,22 @@ const initialValues = {
     }
 
     return (
-        <Container component="main" maxWidth="xs">
+        <Container component="main"  maxWidth="xs" className={classes.root}>
+                <Grid  container>
+                <Grid item xs={12} sm={12} md={12} lg={12} >
         <Card 
+         className={classes.paper}
         raised
-        className={classes.paper}>
+       >
             <form
+            
                 autoComplete="off"
                 noValidate
                 className={classes.form}
                 onSubmit={handleSubmit}
             >
                  {confirm &&  <ConfirmModal title={confirm.title} message={confirm.message} onConfirm={handleConfirm}/>}
-                <div align="center">
+                 <div align="center">
                     <img src={logo1} alt="logo1" height="50" />
                     <Typography variant="h5">Send a message</Typography>
                
@@ -96,8 +100,8 @@ const initialValues = {
                  subheader={`Tel: ${help?.phone}`}
                 
             />
-       </div>
-                <>
+      
+      </div>
                     <TextField
                         className={classes.input}
                         name="messageTitle"
@@ -132,7 +136,7 @@ const initialValues = {
                             })
                         }
                     />
-                </>
+            
 
                 <Button
                     className={classes.buttonSubmit}
@@ -153,7 +157,11 @@ const initialValues = {
                     Clear
                 </Button>
             </form>
+            
+     
         </Card>
+        </Grid>
+        </Grid>
         </Container>
     );
 };

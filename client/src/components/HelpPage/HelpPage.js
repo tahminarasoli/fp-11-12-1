@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Grow, Container, Grid } from "@material-ui/core";
-import Paginate from  '../../Pagination'
+
 import Helps from "../Help/Helps";
 import Form from "../Form/Form";
 import useStyles from "./styles";
