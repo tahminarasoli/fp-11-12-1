@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import './forgotPassword.css'
+
 import useStyles from "./styles";
 import logo1 from "../../images/logo1.png";
 
@@ -43,7 +43,7 @@ const ForgotPassword = () => {
 
     return (
         <Container component="main" maxWidth="xs">
-               <Paper className={classes.paper} elevation={2}>
+               <Paper className={classes.paper}>
                 <img
                     className={classes.avatar}
                     src={logo1}

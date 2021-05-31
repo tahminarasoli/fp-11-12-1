@@ -19,15 +19,17 @@ export default makeStyles((theme) => ({
       },
     appBar: {
         background: 'rgba(197, 221, 235, 1)',
+        display: 'flex',
+     padding: '10px 10px',
        
     },
    
   
 
     button: {
- 
+ marginRight: '30px',
         position: 'relative',
-        width: '150px',
+        width: '160px',
         height: '50px',
         background: 'linear-gradient(90deg, #70D3FC 0%, #346AD1 100%)',
         boxShadow: 'box-shadow: 10px 10px 20px rgba(38, 80, 127, 0.2), -10px -10px 20px rgba(38, 80, 127, 0.2), 10px -10px 20px rgba(90, 188, 255, 0.9), -10px 10px 25px rgba(38, 80, 127, 0.9), inset -1px 1px 2px rgba(90, 188, 255, 0.3), inset 1px -1px 2px rgba(38, 80, 127, 0.5)',
@@ -44,9 +46,7 @@ export default makeStyles((theme) => ({
           width: '200px',
         },
       },
-      icon: {
-        padding: theme.spacing(0, 2),
-      },
+     
      
        
        
@@ -63,46 +63,37 @@ export default makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
     },
-    brandContainer: {
-        display: 'flex',
-        alignItems: 'center',
-        width: "30%"
-    },
+ 
     purple: {
-      
+      margin: '-20px',
+    
       color: theme.palette.getContrastText(deepPurple[500]),
       backgroundColor: deepPurple[500],
-      width: "40px",
-      height: "40px",
-    marginLeft: '-24px'
+      width: "60px",
+      height: "60px",
+ 
   },
   profile_button:  {
+    margin: '25px',
       fontWeight: 'bold',
-     fontSize: '8px',
-      width: '150px',
+     fontSize: '10px',
+      width: '160px',
       height: '50px',
       color: '#5B5B61',
       background: 'linear-gradient(135deg, #BBD2DF 0%, #CFE8F7 100%)',
       boxShadow: '2px 2px 4px rgba(118, 133, 141, 0.2), -2px -2px 4px rgba(118, 133, 141, 0.2), 2px -2px 4px rgba(255, 255, 255, 0.9), -2px 2px 5px rgba(118, 133, 141, 0.9), inset -1px 1px 2px rgba(255, 255, 255, 0.3), inset 1px -1px 2px rgba(118, 133, 141, 0.5)',
       borderRadius: 30,
   },
-  menu: window.matchMedia("(max-width: 700px)").matches ? {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-      width: "100vw",
-      height: "90%",
-  } : {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-      width: "100vw",
-      height: "90%",
+  menuButton : {
+    margin: '-30px',
   },
-  menuItem: {
-      height: "100px",
-      fontSize: "25px",
+  icon: {
+    marginLeft: '5px',
+
   }
+
+
+
 
   
     

@@ -1,19 +1,20 @@
 import React from "react";
 
-import { Button, Paper } from "@material-ui/core";
+import { Button, Grid, Container, Typography } from "@material-ui/core";
 import useStyles from "./styles";
 
 const ConfirmModal = (props) => {
     const classes = useStyles();
     return (
         <div>
-            <div className={classes.backdrop} onClick={props.onConfirm} />
-            <Paper className={classes.modal}>
-                <header className={classes.header}>
-                    <h2>{props.title}</h2>
-                </header>
+            <Container maxWidth='xl' className={classes.backdrop} onClick={props.onConfirm} />
+            <Grid  container >
+            <Grid item xs={12} sm={12} md={12} lg={12} className={classes.modal}>
+                <Typography className={classes.header}>
+                    <Typography variant='h6'>{props.title}</Typography>
+                </Typography>
 
-                <p>{props.message}</p>
+                <Typography paragraph='paragraph'>{props.message}</Typography>
                 <Button
                     onClick={props.onConfirm}
                     className={classes.button}
@@ -22,7 +23,8 @@ const ConfirmModal = (props) => {
                 >
                     Ok
                 </Button>
-            </Paper>
+            </Grid>
+            </Grid>
         </div>
     );
 };

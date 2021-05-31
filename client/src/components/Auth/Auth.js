@@ -230,7 +230,7 @@ const Auth = () => {
 
     return (
         <Container component="main" maxWidth="xs">
-            <Paper className={classes.paper} elevation={2}>
+            <Paper className={classes.paper} >
                 <img src={logo1} alt="logo1" height="50" />
                 <Typography variant="h5">
                     {isRegister ? "Sign Up" : "Log In"}
