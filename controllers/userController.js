@@ -197,7 +197,7 @@ const userController = {
             const access_token = createAccessToken({ id: user._id });
             const url = `${CLIENT_URL}/reset/${access_token}`;
 
-            sendMail(email, url, "Reset your password");
+            sendMail("verify",email, url, "Reset your password");
             res.json({ msg: "Re-send the password, please check your email." });
         } catch (err) {
             return res.status(500).json({ msg: err.message });
