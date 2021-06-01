@@ -13,6 +13,7 @@ import {
  
 } from "@material-ui/core";
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import Fade from '@material-ui/core/Fade';
@@ -158,10 +159,20 @@ const Navbar = () => {
                  component={Link}
                  to="/profile"
              >
+                 
                   <AccountCircle  color='primary'/>
                  <ListItemTextCustom primary="PROFILE" />
              </StyledMenuItem>
-             
+             <StyledMenuItem
+                 onClick={handleProfile}
+                 component={Link}
+                 to="/helps"
+             >
+                 
+                 <AccessibilityNewIcon color="secondary" />
+                 <ListItemTextCustom primary="HELPS" />
+             </StyledMenuItem>
+          
              <StyledMenuItem
                  onClick={handleLogout}
                  component={Link}
@@ -190,7 +201,7 @@ const Navbar = () => {
                     <>
                     <Button edge='end' className={classes.menuButton} color="inherit" aria-label="menu" >
                         <MenuIcon  onClick={showSidebar} fontSize='large'/>
-                       
+                      
                   
                   
                     <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
