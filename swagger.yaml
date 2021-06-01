@@ -247,9 +247,6 @@ paths:
             type: string      
 
       responses:
-        201:
-          description: Help deleted succesfully
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Help"
+        200:
+          description: Help succesfully deleted!
+          

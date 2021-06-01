@@ -10,7 +10,6 @@ import { useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { dispatchLogin } from "../../actions/authActions";
 
-
 import { GoogleLogin } from "react-google-login";
 import FacebookLogin from "react-facebook-login";
 
@@ -28,7 +27,7 @@ import {
 
 import axios from "axios";
 
-import ConfirmModal  from "../../utils/confirmation/ConfirmModal"
+import ConfirmModal from "../../utils/confirmation/ConfirmModal";
 
 const initialState = {
     first: "",
@@ -132,8 +131,9 @@ const Auth = () => {
                 // localStorage.setItem('firstLogin', true);
                 setConfirm({
                     title: "Registration successful!",
-                    message: "Register Success! Please activate your email to start. "
-                }); 
+                    message:
+                        "Register Success! Please activate your email to start. ",
+                });
             } catch (err) {
                 err.response.data.msg &&
                     setFormData({
@@ -226,11 +226,11 @@ const Auth = () => {
     const handleConfirm = () => {
         setConfirm(null);
         window.location.reload();
-    }
+    };
 
     return (
         <Container component="main" maxWidth="xs">
-            <Paper className={classes.paper} >
+            <Paper className={classes.paper}>
                 <img src={logo1} alt="logo1" height="50" />
                 <Typography variant="h5">
                     {isRegister ? "Sign Up" : "Log In"}
@@ -272,7 +272,13 @@ const Auth = () => {
                             showPasswordHandler={showPasswordHandler}
                             required
                         />
-                        {confirm &&  <ConfirmModal title={confirm.title} message={confirm.message} onConfirm={handleConfirm}/>}
+                        {confirm && (
+                            <ConfirmModal
+                                title={confirm.title}
+                                message={confirm.message}
+                                onConfirm={handleConfirm}
+                            />
+                        )}
                         {isRegister && (
                             <>
                                 <Input
@@ -320,12 +326,14 @@ const Auth = () => {
                                 />
                             </>
                         )}
-                        <Link
-                            to="/forgot_password"
-                            className={classes.forgot_password}
-                        >
-                            Forgot your password?
-                        </Link>
+                        {!isRegister && (
+                            <Link
+                                to="/forgot_password"
+                                className={classes.forgot_password}
+                            >
+                                Forgot your password?
+                            </Link>
+                        )}
                     </Grid>
                     <Button
                         type="submit"
